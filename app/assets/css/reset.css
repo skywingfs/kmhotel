@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+body {font-family:Arial; font-size: 12px; margin:0; padding:0; background:#f4f4f4; color:#515151; }
+* { margin:0; padding:0 }
+div, ul, li, h1, h2, h3, h4, h5, h6, img, p, dl, dt, dd, ol, th, td { margin: 0px; padding: 0px; }
+.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+li { list-style-type: none; }
+form, input, button, option, textarea, select { margin: 0px; padding: 0px; }
+input, button, textarea, select { font:100% Tahoma, Helvetica, Arial, sans-serif; }
+a { text-decoration: none; cursor:pointer; outline:none; blr:expression(this.onFocus=this.blur());
+    color:#515151; }
+a:link { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+th { font-weight:normal; }
+img { border: 0; }
+h3 { font-size:14px;  font-weight:bold; }
+h4 { font-size: 12px;    font-weight:bold; }
+.clear { clear: both; }
+.copy { font-family:Arial, Helvetica, sans-serif; }
+table { font-size:inherit; font:100%; }
+img { border:none;  }
