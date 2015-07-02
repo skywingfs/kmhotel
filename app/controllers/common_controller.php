@@ -41,7 +41,7 @@ class CommonController extends Smarty
           $this->assign("assets", "app/assets");
         //检查登录
       // $this->check_login();
-       // $this->model = D();
+        $this->model = D();
     }
 
     // $s->display();

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-06-29 11:50:49
+<?php /* Smarty version Smarty-3.1.20, created on 2015-06-30 10:32:40
          compiled from "C:\wamp\www\kmhotel\app\views\user\login.html" */ ?>
 <?php /*%%SmartyHeaderCode:125275590d9327567c7-20660274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee51855cbf4c48e4cc6f02e296f795663a5595d6' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\user\\login.html',
-      1 => 1435571417,
+      1 => 1435653157,
       2 => 'file',
     ),
   ),
@@ -52,10 +52,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /js/login_js/jquery.form.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/js/login_js/login.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /js/login_js/tooltips.js"></script>
-<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/js/login_js/login.js"></script>
+
 </head>
 
 <body>
@@ -70,10 +71,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		
 			<div class="login_form">
-				<form action="index.php?c=admin" id="login_form" method="post">
+				<form action="index.php?c=user&a=do_login" id="login_form" method="post">
 					<div class="form-group">
-						<label for="email" class="t">邮　箱：</label>
-						<input id="email" value="" name="email" type="text" class="form-control x319 in" 
+						<label for="username" class="t">用户名：</label>
+						<input id="username" value="" name="username" type="text" class="form-control x319 in"
 						autocomplete="off">
 					</div>
 					<div class="form-group">

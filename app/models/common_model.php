@@ -25,7 +25,7 @@ class CommonModel
     function all($sql){
         $result = $this->db->query($sql);
         $array = array();
-        while($row = $result->fetch_array()){
+        while($row = $result->fetch_assoc()){
             $array[] = $row;
         }
         return $array;

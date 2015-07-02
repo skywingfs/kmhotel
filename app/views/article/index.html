@@ -1,0 +1,69 @@
+{{extends file="../admin/index.html"}}
+{{block name=nav}}文章列表{{/block}}
+{{block name=title}}文章列表
+<hr/>{{/block}}
+{{block name=notice}}{{/block}}
+
+{{block name=main}}
+
+<div class="botton_art b1">
+    <a href="index.php?c=content&a=add">
+        <button class="btn btn-info" type="submit">添加文章</button>
+    </a>
+    <button class="btn btn-danger del_all" type="submit">删除</button>
+</div>
+        <br/>
+<div class="bs-example" data-example-id="bordered-table">
+    <form class="form" action="" method="post" style="min-height:500px;">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th colspan="5">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="CheckedAll">全选
+                        </label>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row" style="width:1%;"><span class="glyphicon glyphicon-resize-vertical"
+                                                        aria-hidden="true"></span></th>
+                <td>标题</td>
+                <td>所属栏目</td>
+                <td>发布日期</td>
+                <th style="width:1%;"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></th>
+            </tr>
+            <tr class="">
+                <th scope="row">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="ok2" name="items[]" value="">
+                        </label>
+                    </div>
+                </th>
+                <td>标题内容</td>
+                <td>所属栏目内容</td>
+                <td>发布日期</td>
+                <th>
+                    <p class="p1">
+                        <a href="index.php?c=content&a=edit_article&id=">
+                            <span class="glyphicon glyphicon-pencil p1" aria-hidden="true"></span>
+                        </a>
+                        <a href="index.php?c=content&a=del_article&id=">
+                            <span class="glyphicon glyphicon-remove p1" aria-hidden="true"></span>
+                        </a>
+                    </p>
+
+                </th>
+            </tr>
+
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+{{/block}}

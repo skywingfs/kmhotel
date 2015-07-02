@@ -1,6 +1,5 @@
 /* 
 Author: Start Bootstrap - http://startbootstrap.com
-'SB Admin' HTML Template by Start Bootstrap
 
 All Start Bootstrap themes are licensed under Apache 2.0. 
 For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
@@ -13,6 +12,22 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 body {
   margin-top: 50px;
 }
+
+
+
+#content {
+    padding-bottom:290px;
+}
+.footer{
+    text-align:center;
+    background:#2E2F30;
+    height:25px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 
 #wrapper {
   padding-left: 0;
@@ -62,6 +77,9 @@ body {
 }
 
 /* Table Headers */
+table td,th{
+    text-align: center;
+}
 
 table.tablesorter thead {
   cursor: pointer;

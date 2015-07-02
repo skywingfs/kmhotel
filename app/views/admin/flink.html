@@ -1,0 +1,206 @@
+{{extends file="index.html"}}
+{{block name=nav}}友情链接管理{{/block}}
+{{block name=title}}友情链接管理
+<hr/>{{/block}}
+{{block name=notice}}{{/block}}
+
+{{block name=main}}
+<div>
+    <button type="button" class="btn btn-info btn-md add" data-toggle="modal" data-target="#myModal">新增</button>
+    <button type="button" class="btn btn-success btn-md sort">排序</button>
+    <button type="button" class="btn btn-danger btn-md del_all" data-toggle="modal" data-target="#delAllModal">删除</button>
+</div>
+<hr/>
+
+<div>
+    <form action="" method="post" class="form-horizontal" id="mainform">
+        <table class="table table-bordered table-striped with-check">
+            <thead>
+            <tr>
+                <th><input type="checkbox" id="checkAll"  value="0"/>全选</th>
+                <th>名称</th>
+                <th>网址</th>
+                <th>排序</th>
+                <th><i class="fa fa-wrench"></i></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{foreach $links as $link}}
+            <tr>
+                <td><input type="checkbox" name="items[]" value="{{$link.id}}" id="mybox"/></td>
+                <td class='linkName'>{{$link.linkName}}</td>
+                <td class="linkAddr"><a class='url' href="http://{{$link.linkAddr}}"
+                                        target="_blank">{{$link.linkAddr}}</a></td>
+                <td class="paixu">
+                    <input type="text" class="input-mini right" value="{{$link.orderId}}" maxlength="2"
+                           name="order[]"/>
+                </td>
+                <td>
+                    <a class="edit" href="#myModal" data-toggle="modal"
+                       data-id="{{$link.id}}"><i
+                            class="fa fa-edit"></i></a>
+                    <a class="del" href="javascript:void 0;" data-toggle="modal" data-target="#delModal"
+                        data-id2="{{$link.id}}"><i
+                            class="fa fa-times"></i></a>
+                </td>
+                <input type="hidden" value="{{$link.id}}" class="id" name="id[]"/>
+            </tr>
+            {{/foreach}}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<!-- 模态框（Modal）新增和编辑的共用模态框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form role="form" action="" method="post" class="form_add">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        新增一个友情链接
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="linkName">名称</label>
+                        <input type="text" class="form-control" id="linkName" name="linkName"
+                               placeholder="请输入名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkAddr">请输入网址</label>
+                        <input type="text" class="form-control" id="linkAddr" name="linkAddr"
+                               placeholder="请输入网址">
+                    </div>
+                    <input type="hidden" value="" name="id" class="m_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">关闭
+                    </button>
+                    <button type="submit" class="btn btn-primary add_link">
+                        提交
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+
+    </div>
+    <!-- /.modal -->
+</div>
+
+<!--模态框  单条删除-->
+<div class="modal fade bs-example-modal-sm" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="delModalLabel">
+                    删除一个友情链接
+                </h4>
+            </div>
+            <form action="" method="post" class="form2">
+            <div class="modal-body">
+                你确定删除 <span id="linkName2"></span>吗？
+                <input type="hidden" value="" name="id" class="m_id2">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    确定删除
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--模态框  批量删除-->
+<div class="modal fade bs-example-modal-sm" id="delAllModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="delAllModalLabel">
+                    删除友情链接
+                </h4>
+            </div>
+                <div class="modal-body">
+                    你确定删除吗？
+                    <input type="hidden" value="" name="id" class="m_id2">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" class="btn btn-primary del-links">
+                        确定删除
+                    </button>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+    <script type="">
+        $(function () {
+            $("#checkAll").click(function () {
+                $(':checkbox').prop("checked", this.checked );
+            });
+            $(".sort").click(function(){
+                $("#mainform").attr("action", "index.php?c=admin&a=sort").submit();
+            });
+            $(".del").click(function(){
+                $(".form2").attr("action", "index.php?c=admin&a=del_one");
+                var id = $(this).attr("data-id2");
+                var linkName=$(this).parents("tr").children(".linkName").text();
+                $("#linkName2").text(linkName);
+                $(".m_id2").val(id);
+            });
+            //进入模态框前判断是否选中
+            $(".del_all").click(function(){
+                if(!($("input[type='checkbox']").is(':checked'))){
+                    alert("您并没有选中任何一条友情链接！");
+                    return false;
+                }
+            });
+            //模态框提交
+            $(".del-links").click(function(){
+               $("#mainform").attr("action", "index.php?c=admin&a=del_all").submit();
+            });
+            $(".add").click(function () {
+                $(".form_add").attr("action", "index.php?c=admin&a=add_link");
+                $("#myModalLabel").text("增加一个友情链接");
+            });
+            $(".edit").click(function () {
+                $(".form_add").attr("action", "index.php?c=admin&a=edit_link");
+                var id = $(this).attr("data-id");
+                var linkName = $(this).parents("tr").children(".linkName").text();
+                var linkAddr = $(this).parents("tr").children(".linkAddr").text();
+                $("#linkName").val(linkName);
+                $("#linkAddr").val(linkAddr);
+                $(".m_id").val(id);
+                $("#myModalLabel").text("编辑友情链接");
+            });
+        });
+    </script>
+
+
+
+    {{/block}}

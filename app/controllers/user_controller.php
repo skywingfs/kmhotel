@@ -43,6 +43,7 @@ class UserController extends CommonController {
    */
   function do_login()
   {
+
     if($_POST){
       if($this->model->do_login($_POST)) {
         $this->jump( "index.php?c=admin","登录成功，正在为您跳转至后台");

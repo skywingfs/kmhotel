@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-01 19:18:26
+         compiled from "C:\wamp\www\kmhotel\app\views\article\index.html" */ ?>
+<?php /*%%SmartyHeaderCode:593355941d038ef6b4-57753964%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '2cbf8f222784318e8e08975c7402ce5736810559' => 
+    array (
+      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\article\\index.html',
+      1 => 1435771102,
+      2 => 'file',
+    ),
+    'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
+    array (
+      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
+      1 => 1435769414,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '593355941d038ef6b4-57753964',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.20',
+  'unifunc' => 'content_55941d039e5eb0_43937829',
+  'variables' => 
+  array (
+    'assets' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_55941d039e5eb0_43937829')) {function content_55941d039e5eb0_43937829($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,16 +40,22 @@
     <title>后台管理主界面</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{$assets}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="{{$assets}}/css/admin_css/admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{$assets}}/css/admin_css/font-awesome.min.css">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/css/admin_css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/css/admin_css/font-awesome.min.css">
     <!-- Page Specific CSS -->
-    <!--<link rel="stylesheet" href="{{$assets}}/css/admin_css/morris-0.4.3.min.css">-->
+    <!--<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/css/admin_css/morris-0.4.3.min.css">-->
     <!-- JavaScript -->
-    <script src="{{$assets}}/js/jquery-1.11.3.min.js"></script>
-    <script src="{{$assets}}/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/js/jquery-1.11.3.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -134,156 +171,78 @@
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;{{block name=nav}}系统主页{{/block}}</li>
+                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;文章列表</li>
             </ol>
-            <h1>{{block name=title}}系统主页{{/block}}
+            <h1>文章列表
+<hr/>
             </h1>
-            {{block name=notice}}
-            <div class="alert alert-success alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                欢迎来到卓越后台管理系统~~本系统由<a class="alert-link" href="http://phpgoto.com" target="_blank">phpgoto博主</a> skywing
-                制作。
-            </div>
-            {{/block}}
+            
         </div>
     </div>
 
-    {{block name=main}}
-    <!--功能展示框-->
-    <div class="row" id="content">
-        <div class="col-lg-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <i class="fa fa-edit fa-5x"></i>
-                        </div>
-                        <div class="col-xs-8">
-                            <p class="h1">内容管理</p>
-                            <!--<p class="announcement-text">New Mentions!</p>-->
-                        </div>
+    
+
+<div class="botton_art b1">
+    <a href="index.php?c=content&a=add">
+        <button class="btn btn-info" type="submit">添加文章</button>
+    </a>
+    <button class="btn btn-danger del_all" type="submit">删除</button>
+</div>
+        <br/>
+<div class="bs-example" data-example-id="bordered-table">
+    <form class="form" action="" method="post" style="min-height:500px;">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th colspan="5">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="CheckedAll">全选
+                        </label>
                     </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                View Mentions
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row" style="width:1%;"><span class="glyphicon glyphicon-resize-vertical"
+                                                        aria-hidden="true"></span></th>
+                <td>标题</td>
+                <td>所属栏目</td>
+                <td>发布日期</td>
+                <th style="width:1%;"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></th>
+            </tr>
+            <tr class="">
+                <th scope="row">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="ok2" name="items[]" value="">
+                        </label>
                     </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-desktop fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">文件管理</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                Complete
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-twitter-square fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">友链管理</p>
-                       </div>
-                    </div>
-                </div>
-                <a href="index.php?c=admin&a=flink">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                GO
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-github-square fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">用户管理</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                Complete
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-trash-o fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">清除缓存</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                Complete
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-{{/block}}
+                </th>
+                <td>标题内容</td>
+                <td>所属栏目内容</td>
+                <td>发布日期</td>
+                <th>
+                    <p class="p1">
+                        <a href="index.php?c=content&a=edit_article&id=">
+                            <span class="glyphicon glyphicon-pencil p1" aria-hidden="true"></span>
+                        </a>
+                        <a href="index.php?c=content&a=del_article&id=">
+                            <span class="glyphicon glyphicon-remove p1" aria-hidden="true"></span>
+                        </a>
+                    </p>
+
+                </th>
+            </tr>
+
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+
 </div>
 
 
@@ -300,11 +259,14 @@
 
 
 <!-- Page Specific Plugins -->
-<!--<script src="{{$assets}}/js/admin_js/raphael-min.js"></script>-->
-<!--<script src="{{$assets}}/js/admin_js/morris-0.4.3.min.js"></script>-->
+<!--<script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/js/admin_js/raphael-min.js"></script>-->
+<!--<script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/js/admin_js/morris-0.4.3.min.js"></script>-->
 <!--<script src="/morris/chart-data-morris.js"></script>-->
 <!--<script src="/js/tablesorter/jquery.tablesorter.js"></script>-->
 <!--<script src="/js/tablesorter/tables.js"></script>-->
 
 </body>
 </html>
+<?php }} ?>

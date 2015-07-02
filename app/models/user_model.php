@@ -17,9 +17,9 @@ class UserModel extends CommonModel
      */
     function do_login($post)
     {
-        $name = trim($post["name"]);
+        $username = trim($post["username"]);
         $password = md5(trim($post["password"]));
-        $user = $this->one("select * from user where `username`='$name' and `password` = '$password'");
+        $user = $this->one("select * from users where `username`='$username' and `password` = '$password'");
 
         //用户账号密码正确，注册session
         if ($user) {
