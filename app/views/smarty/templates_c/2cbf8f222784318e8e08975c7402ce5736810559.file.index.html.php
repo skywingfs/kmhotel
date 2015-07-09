@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-01 19:18:26
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-08 17:31:28
          compiled from "C:\wamp\www\kmhotel\app\views\article\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:593355941d038ef6b4-57753964%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2cbf8f222784318e8e08975c7402ce5736810559' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\article\\index.html',
-      1 => 1435771102,
+      1 => 1436369458,
       2 => 'file',
     ),
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1435769414,
+      1 => 1436187297,
       2 => 'file',
     ),
   ),
@@ -56,6 +56,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /js/jquery-1.11.3.min.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /bootstrap/js/bootstrap.min.js"></script>
+    
+        
 </head>
 <body>
 
@@ -86,17 +88,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li><a href="#">栏目管理</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>
+            <li><a href="index.php?c=file"><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>
             <li><a href=""><i class="fa fa-bar-chart-o"></i> &nbsp;&nbsp;报表管理</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i>
                     &nbsp;&nbsp;系统设置 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">站点信息</a></li>
-                    <li><a href="#">密码修改</a></li>
+                    <li><a href="index.php?c=admin&a=changePwd">密码修改</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-file"></i> &nbsp;&nbsp;清除缓存</a></li>
+            <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
             <!--<li class="dropdown">-->
                 <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>-->
                     <!--&nbsp;&nbsp;Dropdown <b class="caret"></b></a>-->
@@ -154,7 +156,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <li>
                 <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
             </li>
-            <li class="dropdown user-dropdown">
+            <li class="dropdown user-dropdown" style="margin-right: 40px;">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的 Admin <b
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -183,26 +185,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     
 
 <div class="botton_art b1">
-    <a href="index.php?c=content&a=add">
+    <a href="index.php?c=article&a=add">
         <button class="btn btn-info" type="submit">添加文章</button>
     </a>
-    <button class="btn btn-danger del_all" type="submit">删除</button>
+    <button class="btn btn-danger del_all"  data-toggle="modal" data-target="#delAllModal">删除</button>
 </div>
         <br/>
 <div class="bs-example" data-example-id="bordered-table">
-    <form class="form" action="" method="post" style="min-height:500px;">
+    <form class="mainform" action="" method="post" style="min-height:500px;">
+
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th colspan="5">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="CheckedAll">全选
+                            <input type="checkbox" id="checkAll">全选
                         </label>
                     </div>
                 </th>
             </tr>
             </thead>
+            <?php  $_smarty_tpl->tpl_vars['content'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['content']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['contents']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['content']->key => $_smarty_tpl->tpl_vars['content']->value) {
+$_smarty_tpl->tpl_vars['content']->_loop = true;
+?>
             <tbody>
             <tr>
                 <th scope="row" style="width:1%;"><span class="glyphicon glyphicon-resize-vertical"
@@ -210,37 +218,143 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <td>标题</td>
                 <td>所属栏目</td>
                 <td>发布日期</td>
-                <th style="width:1%;"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></th>
+                <th style="width:1%;">
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></th>
             </tr>
             <tr class="">
                 <th scope="row">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" class="ok2" name="items[]" value="">
+                            <input type="checkbox" class="ok2" name="items[]" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['id'];?>
+" >
                         </label>
                     </div>
                 </th>
-                <td>标题内容</td>
-                <td>所属栏目内容</td>
-                <td>发布日期</td>
+                <td class="title"><?php echo $_smarty_tpl->tpl_vars['content']->value['title'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['content']->value['cateName'];?>
+</td>
+                <td><?php echo date('Y-m-d H:i:s',$_smarty_tpl->tpl_vars['content']->value['time']);?>
+</td>
                 <th>
                     <p class="p1">
-                        <a href="index.php?c=content&a=edit_article&id=">
+                        <a href="index.php?c=article&a=edit_art&id=<?php echo $_smarty_tpl->tpl_vars['content']->value['id'];?>
+">
                             <span class="glyphicon glyphicon-pencil p1" aria-hidden="true"></span>
                         </a>
-                        <a href="index.php?c=content&a=del_article&id=">
+
+                        <a href="#delModal" data-toggle="modal"
+                           data-id2="<?php echo $_smarty_tpl->tpl_vars['content']->value['id'];?>
+" class="del_one">
                             <span class="glyphicon glyphicon-remove p1" aria-hidden="true"></span>
                         </a>
                     </p>
-
                 </th>
             </tr>
-
             </tbody>
+            <?php } ?>
         </table>
+        <?php echo $_smarty_tpl->tpl_vars['page_show']->value;?>
+
     </form>
 </div>
 
+<!--模态框  单条删除-->
+<div class="modal fade bs-example-modal-sm" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="delModalLabel">
+                    删除一篇文章
+                </h4>
+            </div>
+            <form action="" method="post" class="form2">
+                <div class="modal-body">
+                    你确定删除“ <span id="title"></span>”吗？
+                    <input type="hidden" value="" name="id" class="m_id2">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        确定删除
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--模态框  批量删除-->
+<div class="modal fade bs-example-modal-sm" id="delAllModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="delAllModalLabel">
+                    删除文章
+                </h4>
+            </div>
+            <div class="modal-body">
+                你确定删除吗？
+                <input type="hidden" value="" name="id" class="m_id2">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消
+                </button>
+                <button type="submit" class="btn btn-primary del-links">
+                    确定删除
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="">
+    $(function () {
+        $("#checkAll").click(function () {
+            $(':checkbox').prop("checked", this.checked);
+        });
+
+        $(".del_one").click(function(){
+            $(".form2").attr("action", "index.php?c=article&a=del_one");
+            var id = $(this).attr("data-id2");
+            var title=$(this).parents("tr").children(".title").text();
+
+            $("#title").text(title);
+            $(".m_id2").val(id);
+        });
+
+        $(".del_all").click(function(){
+            if(!($("input[type='checkbox']").is(':checked'))){
+                alert("您并没有选中任何一篇文章！");
+                return false;
+            }
+        });
+
+        //模态框提交
+        $(".del-links").click(function(){
+            $(".mainform").attr("action", "index.php?c=article&a=del_all").submit();
+        })
+    });
+
+
+</script>
 
 
 </div>

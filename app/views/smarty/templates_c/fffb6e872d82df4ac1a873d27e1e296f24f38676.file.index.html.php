@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-02 04:16:03
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-06 14:55:00
          compiled from "C:\wamp\www\kmhotel\app\views\admin\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:2349055910362a67974-28174674%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1435769414,
+      1 => 1436187297,
       2 => 'file',
     ),
   ),
@@ -50,6 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /js/jquery-1.11.3.min.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /bootstrap/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
 
@@ -80,17 +81,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li><a href="#">栏目管理</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>
+            <li><a href="index.php?c=file"><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>
             <li><a href=""><i class="fa fa-bar-chart-o"></i> &nbsp;&nbsp;报表管理</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i>
                     &nbsp;&nbsp;系统设置 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">站点信息</a></li>
-                    <li><a href="#">密码修改</a></li>
+                    <li><a href="index.php?c=admin&a=changePwd">密码修改</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-file"></i> &nbsp;&nbsp;清除缓存</a></li>
+            <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
             <!--<li class="dropdown">-->
                 <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>-->
                     <!--&nbsp;&nbsp;Dropdown <b class="caret"></b></a>-->
@@ -148,7 +149,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <li>
                 <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
             </li>
-            <li class="dropdown user-dropdown">
+            <li class="dropdown user-dropdown" style="margin-right: 40px;">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的 Admin <b
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -221,11 +222,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="index.php?c=file">
                     <div class="panel-footer announcement-bottom">
                         <div class="row">
                             <div class="col-xs-6">
-                                Complete
+                                Go
                             </div>
                             <div class="col-xs-6 text-right">
                                 <i class="fa fa-arrow-circle-right"></i>

@@ -4,7 +4,6 @@ require(VENDOR_PATH . '/smarty/Smarty.class.php');
 
 class CommonController extends Smarty
 {
-
     //当前方法对应的模板
     var $template;
     var $action;
@@ -112,5 +111,10 @@ class CommonController extends Smarty
         $_SESSION["user"] = $user;
         $this->assign("user", $user);
     }
+
+
+
+
+
 
 }

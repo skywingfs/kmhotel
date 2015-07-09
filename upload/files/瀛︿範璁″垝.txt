@@ -1,0 +1,70 @@
+1.皇家同花顺 Royal straight flush (比如黑桃10,J,Q,K,A)
+2.同花顺 Straight flush (比如黑桃3,4,5,6,7)
+3.四条,炸弹 Four of a kind (比如四条9和一个其它任何牌)
+4.满堂彩 Full house (三条加一对)
+5.清一色 Flush (比如梅花2,5,6,8,J)
+6.一条龙 Straight (比如4,5,6,7,8不同花色混杂)
+7.三条 Three of a Kind (比如三个8和其它任意两张单牌)
+8.两对 Two Pair
+9.一对 Pair
+
+
+
+
+
+87653652交行房贷科
+
+要徐立留意下慧谷时空和SBI创业街的php工作
+
+
+接口 多态
+
+网站后续学习
+
+
+thinkphp专题讲堂（网易云课堂）
+
+MVC架构模式分析与设计
+
+
+CSS图标
+http://www.yeahzan.com/fa/facss.html
+
+
+C:\wamp\bin\apache\apache2.4.9\conf\extra
+
+C:\Windows\System32\drivers\etc
+
+
+
+
+6月13日——6月14日（周末计划）
+1.学完慕课网less课程；
+2.学完传智播客呱呱网的制作；
+
+
+
+
+ebuy S2SH商城系统 链接: http://pan.baidu.com/s/1kTBS41h 密码: cgjd
+http://www.java1234.com/a/yuanchuang/ebuy/ 源码
+
+小锋 2015/4/22 15:31:27
+
+说明：
+第3讲以后视频是加密的，需要用专用播放器看；
+专用播放下载
+链接: http://pan.baidu.com/s/1sjntLs5 密码: sktq
+使用的时候，会提示机器码，发给我即可；
+(备注：此教程属于java1234官方内部VIP教程，受法律版权保护，请勿泄漏出去，谢谢)
+(注意：假如打开播放器，出现eclipse提示退出,或者是浏览器提示退出，请把含有有save,user的jsp文件重新命名下；把杀软关闭掉，播放器加壳了，有可能被误报病毒)
+
+
+
+
+80359316a353c6008434966da250b20785359017a356b00581339511a750bb7980309111a753b60785349017a655b37980309511a356b0078031946dd650b37986359516a756b100f234976da150b379d16490
+
+
+ZGGK
+
+
+729562919周治安QQ

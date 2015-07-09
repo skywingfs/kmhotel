@@ -1,7 +1,26 @@
 <?php
 class CommonModel
 {
+    //下面提供外部访问的方法
     protected $db;
+
+    /**
+     * @return mysqli
+     */
+    public function getDb()
+    {
+        return $this->db;
+    }
+
+    /**
+     * @param mysqli $db
+     */
+    public function setDb($db)
+    {
+        $this->db = $db;
+    }
+
+
 
     function __construct(){
 
@@ -77,12 +96,14 @@ class CommonModel
     {
         $sets="";
         foreach ($array as $key => $val) {
-            $sets .= $key . "='" . $val . "',";
+            $sets .= "`".$key . "`"."='" . $val . "',";
         }
+        //echo $sets;exit;
         $sets=rtrim($sets,','); //去掉SQL里的最后一个逗号
         //echo $sets;
         $sql = "update {$table} set {$sets} " . ($where == null ? null : " where " . $where);
-       // echo $sql;
+//       echo $sql;
+//        exit;
         $result=$this->db->query($sql);
         if ($result) {
             return mysqli_affected_rows($this->db);

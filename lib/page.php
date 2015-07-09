@@ -5,12 +5,15 @@ class Page
     private $p;     //当前页数
     private $page_size;     //每页显示多少条
     private $page_count;    //页面总数
+    private $url;
 
-    function __construct($p, $page_size, $page_count)
+    function __construct($p, $page_size, $page_count, $url = "")
     {
+
         $this->p = $p;
         $this->page_size = $page_size;
         $this->page_count = $page_count;
+        $this->url = $url == "" ? "?" : $url . "&";
     }
 
     /***
@@ -29,7 +32,8 @@ class Page
 
         //判断是否有上一页
         if ($this->p != 1) {
-            $page_link .= '<li><a href="?p='.($this->p-1).'" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+            $page_link .= '<li><a href="'.$this->url.'p=1'.'">首页</a></li>';
+            $page_link .= '<li><a href="' . $this->url . 'p=' . ($this->p - 1) . '" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
         }
 
         //当前页，前面的部分，
@@ -37,49 +41,53 @@ class Page
         if ($this->p + 4 > $this->page_count) {
             $x = $this->page_count - 9 > 1 ? $this->page_count - 9 : 1;     //不能小于1
             for ($i = $x; $i < $this->p; $i++) {
-                $page_link .= '<li><a href="?p='.$i.'">' . $i . '</a></li>';
+                $page_link .= '<li><a href="' . $this->url . 'p=' . $i . '">' . $i . '</a></li>';
             }
         } elseif ($this->p > 6) {
             for ($i = $this->p - 5; $i < $this->p; $i++) {
-                $page_link .= '<li><a href="?p='.$i.'">' . $i . '</a></li>';
+                $page_link .= '<li><a href="' . $this->url . 'p=' . $i . '">' . $i . '</a></li>';
             }
         } else {
             for ($i = 1; $i < $this->p; $i++) {
-                $page_link .= '<li><a href="?p='.$i.'">' . $i . '</a></li>';
+                $page_link .= '<li><a href="' . $this->url . 'p=' . $i . '">' . $i . '</a></li>';
             }
         }
 
         //当前页面
         $page_link .= '<li class="active"><a href="javascript: void 0;">' . $this->p . '</a></li>';
 
-        //当前页面后面的部分，
+        //当前页面后面的部分this->，
 
         if ($this->p < 6) {
             $x = $this->page_count < 10 ? $this->page_count : 10;
             for ($i = $this->p + 1; $i <= $x; $i++) {
-                    $page_link .= '<li><a href="?p='.$i.'">' . $i . '</a></li>';
+                $page_link .= '<li><a href="' . $this->url . 'p=' . $i . '">' . $i . '</a></li>';
             }
         } elseif ($this->p + 4 <= $this->page_count) {
             $x = $this->p + 5 < $this->page_count ? $this->p + 5 : $this->page_count;
             for ($i = $this->p + 1; $i < $x; $i++) {
-                $page_link .= '<li><a href="?p='.$i.'">' . $i . '</a></li>';
+                $page_link .= '<li><a href="' . $this->url . 'p=' . $i . '">' . $i . '</a></li>';
             }
         } else {
             for ($i = $this->p + 1; $i < $this->page_count + 1; $i++) {
-                $page_link .= '<li><a href="?p='.$i.'">' . $i . '</a></li>';
+                $page_link .= '<li><a href="' . $this->url . 'p=' . $i . '">' . $i . '</a></li>';
             }
         }
 
         //判断是否有下一页
         if ($this->p != $this->page_count) {
-            $page_link .= '<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+            $page_link .= '<li><a href="' . $this->url . 'p=' . ($this->p + 1) . '" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+            $page_link .= '<li><a href="'.$this->url.'p='.($this->page_count).'">尾页</a></li>';
         }
 
 
+        $//page_link .= '<li class="active">共'.($this->page_count).'页</a></li>';
         $page_link .= '</ul></nav>';
+
 
         return $page_link;
     }
 
 
 }
+
