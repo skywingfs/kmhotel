@@ -80,14 +80,12 @@ class Page
             $page_link .= '<li><a href="'.$this->url.'p='.($this->page_count).'">尾页</a></li>';
         }
 
+        //$page_link .= '<li>共'.($this->page_count).'页</li>';
 
-        $//page_link .= '<li class="active">共'.($this->page_count).'页</a></li>';
         $page_link .= '</ul></nav>';
-
 
         return $page_link;
     }
-
 
 }
 

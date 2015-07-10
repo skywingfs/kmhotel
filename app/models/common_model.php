@@ -66,10 +66,11 @@ class CommonModel
      * @param $sql
      * @return int
      */
-    function count($table){
-        $result = $this->one("select count(*) as count from $table");
+    function count($table, $where=""){
+        $result =  $this->one("select count(*) as `count` from $table $where");
         return $result["count"];
     }
+
 
     function insert($table, $array)
     {
@@ -111,8 +112,6 @@ class CommonModel
             return false;
         }
     }
-
-
 
 
 

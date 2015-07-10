@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-09 04:50:41
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-10 15:34:17
          compiled from "C:\wamp\www\kmhotel\app\views\article\edit_art.html" */ ?>
 <?php /*%%SmartyHeaderCode:11212559cdf37d6da69-70759483%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '401a63e8b5af178ef27c5ff56dd02ee341c9094e' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\article\\edit_art.html',
-      1 => 1436358557,
+      1 => 1436415641,
       2 => 'file',
     ),
     '2cbf8f222784318e8e08975c7402ce5736810559' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436187297,
+      1 => 1436442585,
       2 => 'file',
     ),
   ),
@@ -104,7 +104,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     &nbsp;&nbsp;内容管理 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="index.php?c=article">文章列表</a></li>
-                    <li><a href="#">栏目管理</a></li>
+                    <li><a href="index.php?c=column">栏目管理</a></li>
                 </ul>
             </li>
             <li><a href="index.php?c=file"><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>
@@ -244,11 +244,12 @@ $_smarty_tpl->tpl_vars['cate']->_loop = true;
                     <label class="col-md-2" style="text-align: center">标题颜色</label>
 
                     <div class="controls col-md-10" >
-                        <div data-color-format="hex" data-color="#000000" class="input-append color colorpicker">
+                        <div data-color-format="hex" data-color="<?php echo $_smarty_tpl->tpl_vars['article']->value['title_color'];?>
+" class="input-append color colorpicker">
                             <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['title_color'];?>
 " class="span6" name="title_color">
 	        <span class="add-on">
-	            <i style="background-color: rgb(0, 0, 0);"></i>
+	            <i style="background-color:#08c;"></i>
 	        </span>
                         </div>
                     </div>

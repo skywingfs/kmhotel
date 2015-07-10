@@ -1,0 +1,102 @@
+{{extends file="../admin/index.html"}}
+{{block name=cssjs}}
+{{/block}}
+{{block name=nav}}栏目管理{{/block}}
+{{block name=title}}栏目管理
+<hr/>{{/block}}
+{{block name=notice}}{{/block}}
+
+{{block name=main}}
+
+<div class="botton_art b1">
+    <a href="index.php?c=article&a=add">
+        <button class="btn btn-info" type="submit">新增顶级栏目</button>
+    </a>
+    <button class="btn btn-success sort">排序</button>
+</div>
+<hr/>
+
+
+<div class="panel panel-info">
+    <div class="panel-heading"><i class="fa fa-align-justify"></i><span> 栏目管理</span></div>
+
+    <div class="panel-body">
+        <form action="" method="post" class="form-horizontal" id="mainform">
+            <table class="table table-bordered table-striped with-check">
+                <thead>
+                <tr>
+                    <th class="col-md-1">排序</th>
+                    <th class="col-md-6">名称</th>
+                    <th class="col-md-3">栏目文章</th>
+                    <th class="col-md-2"><i class="fa fa-cog"></i></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{foreach $cates as $cate}}
+                <tr>
+                    <td>
+                        <input type="text" value="1" size="1"
+                               name="order[]"/>
+                    </td>
+                    <td class='name' style="text-align: left;">
+                        <a href=""
+                           target="_blank" title="ID=66"
+                           class="tip-top">
+                            {{for $i=1;$i<$cate.count;$i++ }}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {{/for}}
+                            {{$cate.cateName}}
+
+                            <span style="color:#a7cb52;">[封面]</span> </a>
+                    </td>
+                    <td style="width:80px;text-align: center;">
+                    </td>
+                    <td class="">
+                        <a href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                        <a href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                        <a href="index.php?c=column&a=del_column&id={{$cate.id}}"><span class="glyphicon glyphicon-remove del" aria-hidden="true"></span></a>
+                    </td>
+                    <input type="hidden" value="66" class="id" name="id[]"/>
+                </tr>
+                {{/foreach}}
+                </tbody>
+
+            </table>
+        </form>
+    </div>
+</div>
+
+
+<script type="">
+    $(function () {
+        $("#checkAll").click(function () {
+            $(':checkbox').prop("checked", this.checked);
+        });
+
+        $(".del_one").click(function () {
+            $(".form2").attr("action", "index.php?c=article&a=del_one");
+            var id = $(this).attr("data-id2");
+            var title = $(this).parents("tr").children(".title").text();
+
+            $("#title").text(title);
+            $(".m_id2").val(id);
+        });
+
+        $(".del_all").click(function () {
+            if (!($("input[type='checkbox']").is(':checked'))) {
+                alert("您并没有选中任何一篇文章！");
+                return false;
+            }
+        });
+
+        //模态框提交
+        $(".del-links").click(function () {
+            $(".mainform").attr("action", "index.php?c=article&a=del_all").submit();
+        })
+    });
+
+
+</script>
+
+{{/block}}

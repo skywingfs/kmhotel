@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-08 17:31:28
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-09 13:49:51
          compiled from "C:\wamp\www\kmhotel\app\views\article\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:593355941d038ef6b4-57753964%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436187297,
+      1 => 1436442585,
       2 => 'file',
     ),
   ),
@@ -85,7 +85,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     &nbsp;&nbsp;内容管理 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="index.php?c=article">文章列表</a></li>
-                    <li><a href="#">栏目管理</a></li>
+                    <li><a href="index.php?c=column">栏目管理</a></li>
                 </ul>
             </li>
             <li><a href="index.php?c=file"><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>

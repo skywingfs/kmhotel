@@ -1,9 +1,15 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-09 13:53:37
-         compiled from "C:\wamp\www\kmhotel\app\views\admin\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:2349055910362a67974-28174674%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-10 08:05:31
+         compiled from "C:\wamp\www\kmhotel\app\views\column\index.html" */ ?>
+<?php /*%%SmartyHeaderCode:24998559e5fe1b05498-60714758%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
+    'e76fd7998506532313575d39e293d5dc0e317b4b' => 
+    array (
+      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\column\\index.html',
+      1 => 1436508320,
+      2 => 'file',
+    ),
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
@@ -11,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2349055910362a67974-28174674',
+  'nocache_hash' => '24998559e5fe1b05498-60714758',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_55910362addc04_47325863',
+  'unifunc' => 'content_559e5fe1cc9143_81631834',
   'variables' => 
   array (
     'assets' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55910362addc04_47325863')) {function content_55910362addc04_47325863($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_559e5fe1cc9143_81631834')) {function content_559e5fe1cc9143_81631834($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -51,6 +57,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /bootstrap/js/bootstrap.min.js"></script>
     
+
 </head>
 <body>
 
@@ -166,155 +173,116 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;系统主页</li>
+                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;栏目管理</li>
             </ol>
-            <h1>系统主页
+            <h1>栏目管理
+<hr/>
             </h1>
-            
-            <div class="alert alert-success alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                欢迎来到卓越后台管理系统~~本系统由<a class="alert-link" href="http://phpgoto.com" target="_blank">phpgoto博主</a> skywing
-                制作。
-            </div>
             
         </div>
     </div>
 
     
-    <!--功能展示框-->
-    <div class="row" id="content">
-        <div class="col-lg-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <i class="fa fa-edit fa-5x"></i>
-                        </div>
-                        <div class="col-xs-8">
-                            <p class="h1">内容管理</p>
-                            <!--<p class="announcement-text">New Mentions!</p>-->
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                View Mentions
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-desktop fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">文件管理</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="index.php?c=file">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                Go
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-twitter-square fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">友链管理</p>
-                       </div>
-                    </div>
-                </div>
-                <a href="index.php?c=admin&a=flink">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                GO
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-github-square fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">用户管理</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                Complete
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <i class="fa fa-trash-o fa-5x"></i>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="h4">清除缓存</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer announcement-bottom">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                Complete
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <i class="fa fa-arrow-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+
+<div class="botton_art b1">
+    <a href="index.php?c=article&a=add">
+        <button class="btn btn-info" type="submit">新增顶级栏目</button>
+    </a>
+    <button class="btn btn-success sort">排序</button>
+</div>
+<hr/>
+
+
+<div class="panel panel-info">
+    <div class="panel-heading"><i class="fa fa-align-justify"></i><span> 栏目管理</span></div>
+
+    <div class="panel-body">
+        <form action="" method="post" class="form-horizontal" id="mainform">
+            <table class="table table-bordered table-striped with-check">
+                <thead>
+                <tr>
+                    <th class="col-md-1">排序</th>
+                    <th class="col-md-6">名称</th>
+                    <th class="col-md-3">栏目文章</th>
+                    <th class="col-md-2"><i class="fa fa-cog"></i></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <?php  $_smarty_tpl->tpl_vars['cate'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cate']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['cates']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['cate']->key => $_smarty_tpl->tpl_vars['cate']->value) {
+$_smarty_tpl->tpl_vars['cate']->_loop = true;
+?>
+                <tr>
+                    <td>
+                        <input type="text" value="1" size="1"
+                               name="order[]"/>
+                    </td>
+                    <td class='name' style="text-align: left;">
+                        <a href=""
+                           target="_blank" title="ID=66"
+                           class="tip-top">
+                            <?php  $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['i']->value = 1;
+  if ($_smarty_tpl->tpl_vars['i']->value<$_smarty_tpl->tpl_vars['cate']->value['count']) { for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value<$_smarty_tpl->tpl_vars['cate']->value['count']; $_smarty_tpl->tpl_vars['i']->value++) {
+?>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <?php }} ?>
+                            <?php echo $_smarty_tpl->tpl_vars['cate']->value['cateName'];?>
+
+
+                            <span style="color:#a7cb52;">[封面]</span> </a>
+                    </td>
+                    <td style="width:80px;text-align: center;">
+                    </td>
+                    <td class="">
+                        <a href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                        <a href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                        <a href="index.php?c=column&a=del_column&id=<?php echo $_smarty_tpl->tpl_vars['cate']->value['id'];?>
+"><span class="glyphicon glyphicon-remove del" aria-hidden="true"></span></a>
+                    </td>
+                    <input type="hidden" value="66" class="id" name="id[]"/>
+                </tr>
+                <?php } ?>
+                </tbody>
+
+            </table>
+        </form>
     </div>
+</div>
+
+
+<script type="">
+    $(function () {
+        $("#checkAll").click(function () {
+            $(':checkbox').prop("checked", this.checked);
+        });
+
+        $(".del_one").click(function () {
+            $(".form2").attr("action", "index.php?c=article&a=del_one");
+            var id = $(this).attr("data-id2");
+            var title = $(this).parents("tr").children(".title").text();
+
+            $("#title").text(title);
+            $(".m_id2").val(id);
+        });
+
+        $(".del_all").click(function () {
+            if (!($("input[type='checkbox']").is(':checked'))) {
+                alert("您并没有选中任何一篇文章！");
+                return false;
+            }
+        });
+
+        //模态框提交
+        $(".del-links").click(function () {
+            $(".mainform").attr("action", "index.php?c=article&a=del_all").submit();
+        })
+    });
+
+
+</script>
+
 
 </div>
 

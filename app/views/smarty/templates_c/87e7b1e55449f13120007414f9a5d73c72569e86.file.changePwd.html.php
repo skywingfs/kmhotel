@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-06 05:20:18
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-09 05:32:51
          compiled from "C:\wamp\www\kmhotel\app\views\admin\changePwd.html" */ ?>
 <?php /*%%SmartyHeaderCode:266705599f3f21b4ce3-89644116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436152679,
+      1 => 1436187297,
       2 => 'file',
     ),
   ),
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.20',
+  'unifunc' => 'content_5599f3f22d1561_77759833',
   'variables' => 
   array (
     'assets' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5599f3f22d1561_77759833',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5599f3f22d1561_77759833')) {function content_5599f3f22d1561_77759833($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
