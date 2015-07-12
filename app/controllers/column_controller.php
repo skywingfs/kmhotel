@@ -29,7 +29,21 @@ function del_column(){
 
 }
 
+    function add(){
+        $cates=$this->model->all_cates();
 
+        $this->assign("cates",$cates);
+
+        $this->display();
+    }
+
+    function sort(){
+//        dump($_POST);exit;
+        if($_POST){
+            $this->model->sort($_POST);
+            $this->jump("index.php?c=column");
+        }
+    }
 
 
 

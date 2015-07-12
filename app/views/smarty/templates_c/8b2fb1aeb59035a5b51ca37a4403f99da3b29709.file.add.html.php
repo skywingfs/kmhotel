@@ -1,13 +1,19 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-12 18:43:09
-         compiled from "C:\wamp\www\kmhotel\app\views\admin\changePwd.html" */ ?>
-<?php /*%%SmartyHeaderCode:266705599f3f21b4ce3-89644116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-12 18:42:35
+         compiled from "C:\wamp\www\kmhotel\app\views\column\add.html" */ ?>
+<?php /*%%SmartyHeaderCode:669055a21964f24f56-93772493%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '87e7b1e55449f13120007414f9a5d73c72569e86' => 
+    '8b2fb1aeb59035a5b51ca37a4403f99da3b29709' => 
     array (
-      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\changePwd.html',
-      1 => 1436152509,
+      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\column\\add.html',
+      1 => 1436716511,
+      2 => 'file',
+    ),
+    'e76fd7998506532313575d39e293d5dc0e317b4b' => 
+    array (
+      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\column\\index.html',
+      1 => 1436718907,
       2 => 'file',
     ),
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
@@ -17,19 +23,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '266705599f3f21b4ce3-89644116',
+  'nocache_hash' => '669055a21964f24f56-93772493',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5599f3f22d1561_77759833',
+  'unifunc' => 'content_55a21965148ed1_15079302',
   'variables' => 
   array (
     'assets' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5599f3f22d1561_77759833')) {function content_5599f3f22d1561_77759833($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55a21965148ed1_15079302')) {function content_55a21965148ed1_15079302($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -57,6 +63,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /bootstrap/js/bootstrap.min.js"></script>
     
+<link rel="stylesheet" href="vendor/select2/select2.min.css">
+<style>
+    .form-group {
+        margin-top: 30px;
+    }
+</style>
+<script type="text/javascript" src="vendor/select2/select2.full.min.js"></script>
+<script type="text/javascript" src="vendor/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="vendor/ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
 
@@ -172,9 +188,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;修改密码</li>
+                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;添加栏目</li>
             </ol>
-            <h1>修改密码
+            <h1>添加栏目
 <hr/>
             </h1>
             
@@ -183,7 +199,136 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     
 
-111
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class="fa fa-align-justify fa-2x" aria-hidden="true" style="float: left;margin-top: 5px"> </span>
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab" style="padding: 0;margin-left: 10px">
+                <h4>增加栏目</h4></a>
+            </li>
+
+            <li class="">
+                <a href="#ios" data-toggle="tab" style="padding: 0;margin-left: 10px">
+                    <h4>栏目内容</h4></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" action="index.php?c=column&a=do_add" method="post">
+            <div class="row">
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                        <div class="form-group">
+                            <label class="control-label col-md-2" style="text-align: center">父栏目</label>
+                            <div class="col-md-10">
+                                <select class="js-example-basic-single" style="width:60%" name="cateid">
+                                    <?php  $_smarty_tpl->tpl_vars['cate'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cate']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['cates']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['cate']->key => $_smarty_tpl->tpl_vars['cate']->value) {
+$_smarty_tpl->tpl_vars['cate']->_loop = true;
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['cate']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['cate']->value['cateName'];?>
+</option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="">
+                            <label for="title" class="col-md-2" style="text-align: center">名称</label>
+
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="title"
+                                       placeholder="栏目名称" name="title" style="width:40%">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="">
+                            <label for="title" class="col-md-2" style="text-align: center">拼音</label>
+
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="pinyin"
+                                       placeholder="栏目拼音" name="title" style="width:40%">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="">
+                            <label for="type" class="col-md-2" style="text-align: center">类型</label>
+
+                            <div class="col-md-10" id="type">
+                                <input type="radio" name="type"  id="" value="m" checked="checked"/>封面
+                                <br/>
+                                <input type="radio" name="type" value="f"/>列表
+                                <br/>
+                                <input type="radio" name="type" value="f"/>URL跳转
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group" style="">
+                            <label for="title" class="col-md-2" style="text-align: center">URL跳转地址</label>
+
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="url"
+                                       placeholder="如果选择了URL跳转，请填写地址" name="title" style="width:40%">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="">
+                            <label for="" class="col-md-2" style="text-align: center">是否显示</label>
+
+                            <div class="col-md-10">
+                                <input type="radio" name="gender"   value="m" checked="checked"/>是
+                                <br/>
+                                <input type="radio" name="gender" value="f"/>否
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="ios">
+                        <div class="editor">
+                            <textarea name="content" class=""></textarea>
+                        </div>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4 col-md-offset-5">
+                <button class="btn btn-success" type="submit">添加</button>
+                <button class="btn btn-danger" type="submit">返回</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+    CKEDITOR.replace('content',
+            {
+                filebrowserBrowseUrl: '/vendor/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl: '/vendor/ckfinder/ckfinder.html?type=Images',
+                filebrowserFlashBrowseUrl: '/vendor/ckfinder/ckfinder.html?type=Flash',
+                filebrowserUploadUrl: '/vendor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                filebrowserImageUploadUrl: '/vendor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                filebrowserFlashUploadUrl: '/vendor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+            });
+
+    $(function () {
+        $(".js-example-basic-single").select2();
+//        $('#myTab li:eq(1) a').tab('show');
+    });
+
+</script>
+
+
 
 </div>
 

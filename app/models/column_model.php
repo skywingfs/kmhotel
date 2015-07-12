@@ -94,4 +94,17 @@ class ColumnModel extends CommonModel
             }
         }
     }
+
+    function sort($post)
+    {
+        $id = $post["id"];
+        $order = $post["order"];
+        foreach ($id as $k => $v) {
+            $orderId=$order["$k"];
+            $this->db->query("update cate set `orderId`='$orderId' where id='$v'");
+        }
+    }
+
+
+
 }

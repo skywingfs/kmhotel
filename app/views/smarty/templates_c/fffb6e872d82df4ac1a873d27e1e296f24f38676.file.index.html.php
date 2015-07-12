@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-09 13:53:37
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-12 19:53:12
          compiled from "C:\wamp\www\kmhotel\app\views\admin\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:2349055910362a67974-28174674%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436442585,
+      1 => 1436723589,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'assets' => 0,
+    'server_info' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -92,73 +93,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </ul>
             </li>
             <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
-            <!--<li class="dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>-->
-                    <!--&nbsp;&nbsp;Dropdown <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Dropdown Item</a></li>-->
-                    <!--<li><a href="#">Another Item</a></li>-->
-                    <!--<li><a href="#">Third Item</a></li>-->
-                    <!--<li><a href="#">Last Item</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">
-            <!--<li class="dropdown messages-dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span-->
-                        <!--class="badge">6</span> <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li class="dropdown-header">6 New Messages</li>-->
-                    <!--<li class="message-preview">-->
-                        <!--<a href="#">-->
-                            <!--<span class="avatar"><img src="http://placehold.it/50x50"></span>-->
-                            <!--<span class="name">John Smith:</span>-->
-                            <!--<span class="message">Hey there, I wanted to ask you something...</span>-->
-                            <!--<span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-
-                    <!--<li class="divider"></li>-->
-                    <!--<li class="message-preview">-->
-                        <!--<a href="#">-->
-                            <!--<span class="avatar"><img src="http://placehold.it/50x50"></span>-->
-                            <!--<span class="name">John Smith:</span>-->
-                            <!--<span class="message">Hey there, I wanted to ask you something...</span>-->
-                            <!--<span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">View Inbox <span class="badge">7</span></a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
-            <!--<li class="dropdown alerts-dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span-->
-                        <!--class="badge">3</span> <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Default <span class="label label-default">Default</span></a></li>-->
-                    <!--<li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>-->
-                    <!--<li><a href="#">Success <span class="label label-success">Success</span></a></li>-->
-                    <!--<li><a href="#">Info <span class="label label-info">Info</span></a></li>-->
-                    <!--<li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>-->
-                    <!--<li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">View All</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
             <li>
-                <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
+            <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
             </li>
             <li class="dropdown user-dropdown" style="margin-right: 40px;">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的 Admin <b
-                        class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的
+                    Admin <b
+                            class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;安全登出</a></li>
                 </ul>
             </li>
         </ul>
     </div>
-    <!-- /.navbar-collapse -->
 </nav>
 
 <div id="page-wrapper">
@@ -166,7 +117,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;系统主页</li>
+                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;系统主页
+                </li>
             </ol>
             <h1>系统主页
             </h1>
@@ -245,7 +197,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </div>
                         <div class="col-xs-6 text-right">
                             <p class="h4">友链管理</p>
-                       </div>
+                        </div>
                     </div>
                 </div>
                 <a href="index.php?c=admin&a=flink">
@@ -316,19 +268,69 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
     </div>
 
-</div>
+    <div class="panel panel-success">
+        <div class="panel-heading"><i class="fa fa-info-circle"></i>
+            <span class="h5">&nbsp;&nbsp;我的信息</span>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-striped">
+                      <span style="text-align: center"> <h4>系统信息</h4></span>
+                        <thead>
+                        <tr>
+                            <td>卓越CMS版本</td>
+                            <td>1.0</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>操作系统</td>
+                            <td>Windows</td>
+                        </tr>
+                        <tr>
+                            <td>运行环境</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['server_info']->value['server_software'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>PHP运行方式</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['server_info']->value['php'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>mysql版本</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['server_info']->value['mysqli'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>已用空间</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['server_info']->value['already_used'];?>
+</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
 
 
 </div>
 
 
 <div class="row-fluid footer">
-    <div  class="span12"> <font style="color: #318c14">2015 &copy; PHPGOTO. </font>><a href="http://www.phpgoto.com" target="_blank"><i class="fa fa-arrow-circle-right"></i> PHPGOTO.COM</a>
+    <div class="span12"><font style="color: #318c14">2015 &copy; PHPGOTO. </font>><a href="http://www.phpgoto.com"
+                                                                                     target="_blank"><i
+            class="fa fa-arrow-circle-right"></i> PHPGOTO.COM</a>
     </div>
 </div>
-
-
-
 
 
 <!-- Page Specific Plugins -->

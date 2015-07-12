@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-10 08:05:31
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-12 19:17:53
          compiled from "C:\wamp\www\kmhotel\app\views\column\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:24998559e5fe1b05498-60714758%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e76fd7998506532313575d39e293d5dc0e317b4b' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\column\\index.html',
-      1 => 1436508320,
+      1 => 1436718907,
       2 => 'file',
     ),
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436442585,
+      1 => 1436721446,
       2 => 'file',
     ),
   ),
@@ -99,61 +99,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </ul>
             </li>
             <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
-            <!--<li class="dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>-->
-                    <!--&nbsp;&nbsp;Dropdown <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Dropdown Item</a></li>-->
-                    <!--<li><a href="#">Another Item</a></li>-->
-                    <!--<li><a href="#">Third Item</a></li>-->
-                    <!--<li><a href="#">Last Item</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">
-            <!--<li class="dropdown messages-dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span-->
-                        <!--class="badge">6</span> <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li class="dropdown-header">6 New Messages</li>-->
-                    <!--<li class="message-preview">-->
-                        <!--<a href="#">-->
-                            <!--<span class="avatar"><img src="http://placehold.it/50x50"></span>-->
-                            <!--<span class="name">John Smith:</span>-->
-                            <!--<span class="message">Hey there, I wanted to ask you something...</span>-->
-                            <!--<span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
 
-                    <!--<li class="divider"></li>-->
-                    <!--<li class="message-preview">-->
-                        <!--<a href="#">-->
-                            <!--<span class="avatar"><img src="http://placehold.it/50x50"></span>-->
-                            <!--<span class="name">John Smith:</span>-->
-                            <!--<span class="message">Hey there, I wanted to ask you something...</span>-->
-                            <!--<span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">View Inbox <span class="badge">7</span></a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
-            <!--<li class="dropdown alerts-dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span-->
-                        <!--class="badge">3</span> <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Default <span class="label label-default">Default</span></a></li>-->
-                    <!--<li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>-->
-                    <!--<li><a href="#">Success <span class="label label-success">Success</span></a></li>-->
-                    <!--<li><a href="#">Info <span class="label label-info">Info</span></a></li>-->
-                    <!--<li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>-->
-                    <!--<li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">View All</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
-            <li>
                 <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
             </li>
             <li class="dropdown user-dropdown" style="margin-right: 40px;">
@@ -185,7 +135,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     
 
 <div class="botton_art b1">
-    <a href="index.php?c=article&a=add">
+    <a href="index.php?c=column&a=add">
         <button class="btn btn-info" type="submit">新增顶级栏目</button>
     </a>
     <button class="btn btn-success sort">排序</button>
@@ -216,7 +166,8 @@ $_smarty_tpl->tpl_vars['cate']->_loop = true;
 ?>
                 <tr>
                     <td>
-                        <input type="text" value="1" size="1"
+                        <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['cate']->value['orderId'];?>
+" size="1"
                                name="order[]"/>
                     </td>
                     <td class='name' style="text-align: left;">
@@ -241,7 +192,8 @@ $_smarty_tpl->tpl_vars['cate']->_loop = true;
                         <a href="index.php?c=column&a=del_column&id=<?php echo $_smarty_tpl->tpl_vars['cate']->value['id'];?>
 "><span class="glyphicon glyphicon-remove del" aria-hidden="true"></span></a>
                     </td>
-                    <input type="hidden" value="66" class="id" name="id[]"/>
+                    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['cate']->value['id'];?>
+" class="id" name="id[]"/>
                 </tr>
                 <?php } ?>
                 </tbody>
@@ -254,37 +206,17 @@ $_smarty_tpl->tpl_vars['cate']->_loop = true;
 
 <script type="">
     $(function () {
-        $("#checkAll").click(function () {
-            $(':checkbox').prop("checked", this.checked);
+        $(".sort").click(function(){
+            $("#mainform").attr("action", "index.php?c=column&a=sort").submit();
         });
 
-        $(".del_one").click(function () {
-            $(".form2").attr("action", "index.php?c=article&a=del_one");
-            var id = $(this).attr("data-id2");
-            var title = $(this).parents("tr").children(".title").text();
-
-            $("#title").text(title);
-            $(".m_id2").val(id);
-        });
-
-        $(".del_all").click(function () {
-            if (!($("input[type='checkbox']").is(':checked'))) {
-                alert("您并没有选中任何一篇文章！");
-                return false;
-            }
-        });
-
-        //模态框提交
-        $(".del-links").click(function () {
-            $(".mainform").attr("action", "index.php?c=article&a=del_all").submit();
-        })
     });
 
 
 </script>
 
 
-</div>
+
 
 
 </div>
