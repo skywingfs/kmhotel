@@ -2,12 +2,14 @@
 /**
  * 用户管理控制器
  */
+
 class UserController extends CommonController {
   /**
    * 显示注册页面
    */
   function reg()
   {
+
     $this->display();
   }
 
@@ -35,15 +37,15 @@ class UserController extends CommonController {
    */
   function login()
   {
+
     $this->display();
   }
 
-  /**
+  /**ValidateCode
    * 执行登录操作
    */
   function do_login()
   {
-
     if($_POST){
       if($this->model->do_login($_POST)) {
         $this->jump( "index.php?c=admin","登录成功，正在为您跳转至后台");

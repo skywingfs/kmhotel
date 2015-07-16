@@ -6,6 +6,7 @@
  * Time: 0:56
  */
 
+require('column_model.php');
 class ArticleModel extends CommonModel
 {
     function all_contents($limit,$page_size)
@@ -25,7 +26,9 @@ class ArticleModel extends CommonModel
     }
 
     function all_cates(){
-        $cates=$this->all("select * from cate");
+        $cates = $this->all("select * from cate order by pid asc,orderId asc,id asc");
+        $col=new columnModel();
+        $cates = $col->get_array($cates);
         return $cates;
     }
 
@@ -58,4 +61,15 @@ class ArticleModel extends CommonModel
         }
     }
 
+
+    function showCate($cateId,$limit,$page_size){
+        echo $cateId;
+        $contents=$this->all("select * from articles where cateId='$cateId'  order by id asc limit $limit,$page_size");
+
+        foreach ($contents as $k => $content) {
+            $cate = $this->one("select * from cate where id='$content[cateId]'");
+            $contents["$k"]["cateName"] = $cate["cateName"];
+        }
+        return $contents;
+    }
 }

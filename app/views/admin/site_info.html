@@ -1,0 +1,129 @@
+{{extends file="index.html"}}
+{{block name=nav}}站点信息{{/block}}
+{{block name=title}}站点信息
+<hr/>{{/block}}
+{{block name=notice}}{{/block}}
+
+{{block name=main}}
+
+<div class="panel panel-info">
+    <div class="panel-heading">  <span class="fa fa-bars" aria-hidden="true">&nbsp;&nbsp;站点信息</span></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal fm" action="index.php?c=admin&a=edit_site" method="post" style="min-height:400px;">
+                    <div class="div_one">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">名字</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="{{$site_info.firstName}}" name="firstName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">姓氏</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="{{$site_info.lastName}}" name="lastName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">网站名称</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="{{$site_info.siteName}}" name="siteName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">ICP备案</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"   value="{{$site_info.icp}}" name="icp">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">版权信息</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="{{$site_info.copyright}}" name="copyright">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10 next">
+                                <button type="button" class="btn btn-success  next_page1">下一页</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="div_two" hidden>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control"  value="{{$site_info.email}}" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">QQ</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="{{$site_info.qq}}" name="qq">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">联系电话</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" value="{{$site_info.phone}}" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">传真</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputEmail3" value="{{$site_info.tax}}" name="tax">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">新浪微博</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword3" value="{{$site_info.weibo}}" name="weibo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked> CMS使用协议
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-sm-offset-2 col-sm-2 last-page">
+                                <button type="button" class="btn btn-warning">上一页</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="submit" class="btn btn-danger"> 提<span>&nbsp;&nbsp;&nbsp;</span>交</button>
+                            </div>
+                        </div>
+
+                            </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $(".next").click(function(){
+            $(".div_one").hide();
+            $(".div_two").fadeIn(1000);
+        });
+
+        $(".last-page").click(function(){
+                $(".div_two").hide();
+                $(".div_one").fadeIn(1000);
+        })
+    })
+</script>
+
+{{/block}}

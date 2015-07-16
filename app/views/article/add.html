@@ -30,9 +30,19 @@
             <div class="form-group">
                 <label class="control-label col-md-2" style="text-align: center">所属栏目</label>
                 <div class="col-md-10">
-                <select class="js-example-basic-single" style="width:60%" name="cateid">
-                    {{foreach $cates as $cate}}
-                    <option value="{{$cate.id}}">{{$cate.cateName}}</option>
+                    <select class="js-example-basic-single" style="width:60%" name="cateId">
+                        <option value="0">顶级栏目</option>
+                        {{foreach $cates as $cate}}
+                        <option value="{{$cate.id}}"
+                        {{if $id eq $cate.id}}
+                        selected='selected';
+                        {{/if}}
+                        >
+                        {{for $i=0; $i<$cate.count; $i++ }}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {{/for}}
+                        {{$cate.cateName}}
+                        </option>
                     {{/foreach}}
                 </select>
                 </div>

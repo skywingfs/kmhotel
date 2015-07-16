@@ -39,7 +39,7 @@ class CommonController extends Smarty
 //        $this->assign("assets", APP_PATH."/assets");
           $this->assign("assets", "app/assets");
         //检查登录
-      // $this->check_login();
+        $this->check_login();
         $this->model = D();
     }
 
@@ -94,6 +94,7 @@ class CommonController extends Smarty
         elseif($this->controller=="index"){
             return;
         }
+
         if (!isset($_COOKIE["token"])) {
             $this->jump("index.php?c=user&a=login", "您还没有登录");
             exit;
@@ -101,8 +102,9 @@ class CommonController extends Smarty
 
         //检测数据库是否有这个token
         $token = $_COOKIE["token"];
+       // echo $token;exit;
         $User = M();
-        $user = $User->one("select * from user where `token` = '$token'");
+        $user = $User->one("select * from users where `token` = '$token'");
         //如果用户信息不存在
         if (!$user) {
             $this->jump("index.php?c=user&a=login", "不要非法登录");

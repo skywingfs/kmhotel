@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-06-30 10:32:40
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-16 05:46:42
          compiled from "C:\wamp\www\kmhotel\app\views\user\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:125275590d9327567c7-20660274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:912055a3ead1cb0009-85436412%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ee51855cbf4c48e4cc6f02e296f795663a5595d6' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\user\\login.html',
-      1 => 1435653157,
+      1 => 1437018319,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '125275590d9327567c7-20660274',
+  'nocache_hash' => '912055a3ead1cb0009-85436412',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5590d93279a068_45594740',
+  'unifunc' => 'content_55a3ead1d47bb3_70599508',
   'variables' => 
   array (
     'assets' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5590d93279a068_45594740')) {function content_5590d93279a068_45594740($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55a3ead1d47bb3_70599508')) {function content_55a3ead1d47bb3_70599508($_smarty_tpl) {?>
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -84,14 +84,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<div class="form-group">
 						<label for="j_captcha" class="t">验证码：</label>
-						 <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
-						<img id="captcha_img" alt="点击更换" title="点击更换" src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/images/captcha.jpeg" class="m">
-					</div>
+						 <input id="j_captcha" name="verify" type="text" class="form-control x164 in"/>
+                        <a href="#"><img src="/lib/code.php" onclick="javascript:this.src='/lib/code.php?tm='+Math.random();" />
+                        </a>
+                    </div>
 					<div class="form-group">
 						<label class="t"></label>
 						<label for="j_remember" class="m">
-						<input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!</label>
+						<input id="j_remember" name="rem" type="checkbox" value="1">&nbsp;记住登陆账号!</label>
 					</div>
 					<div class="form-group space">
 						<label class="t"></label>　　　

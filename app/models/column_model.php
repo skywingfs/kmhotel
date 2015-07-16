@@ -19,6 +19,11 @@ class ColumnModel extends CommonModel
         //  dump($cates);
     }
 
+    function one_cate($id){
+        $cate1=$this->one("select * from cate where id='$id'");
+        return $cate1;
+    }
+
     //foreach循环多维数组
     function get_son($pid)
     {
@@ -107,4 +112,14 @@ class ColumnModel extends CommonModel
 
 
 
+    function add_column($arr){
+       // dump($arr);exit;
+    $this->insert("cate",$arr);
+    }
+
+
+
+    function update_column($arr,$id){
+        $this->update("cate",$arr,"id=$id");
+    }
 }

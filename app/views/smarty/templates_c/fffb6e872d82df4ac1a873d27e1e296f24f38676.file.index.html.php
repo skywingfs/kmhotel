@@ -1,30 +1,32 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-12 19:53:12
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-16 08:36:34
          compiled from "C:\wamp\www\kmhotel\app\views\admin\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:2349055910362a67974-28174674%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:80855a4dc4d1a5503-97757590%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436723589,
+      1 => 1437028316,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2349055910362a67974-28174674',
+  'nocache_hash' => '80855a4dc4d1a5503-97757590',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_55910362addc04_47325863',
+  'unifunc' => 'content_55a4dc4d30ea31_85203017',
   'variables' => 
   array (
     'assets' => 0,
+    'user' => 0,
     'server_info' => 0,
+    'user_info' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55910362addc04_47325863')) {function content_55910362addc04_47325863($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55a4dc4d30ea31_85203017')) {function content_55a4dc4d30ea31_85203017($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -88,11 +90,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i>
                     &nbsp;&nbsp;系统设置 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">站点信息</a></li>
+                    <li><a href="index.php?c=admin&a=site_info">站点信息</a></li>
                     <li><a href="index.php?c=admin&a=changePwd">密码修改</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
+            <li><a href="index.php?c=admin&a=clear"><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
 
         </ul>
 
@@ -101,11 +103,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
             </li>
             <li class="dropdown user-dropdown" style="margin-right: 40px;">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的
-                    Admin <b
-                            class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的<?php echo $_smarty_tpl->tpl_vars['user']->value['username'];?>
+
+                   <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;安全登出</a></li>
+                    <li><a href="index.php?c=user&a=logout"><i class="fa fa-power-off"></i>&nbsp;&nbsp;安全登出</a></li>
                 </ul>
             </li>
         </ul>
@@ -148,11 +150,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="index.php?c=article">
                     <div class="panel-footer announcement-bottom">
                         <div class="row">
                             <div class="col-xs-6">
-                                View Mentions
+                               GO
                             </div>
                             <div class="col-xs-6 text-right">
                                 <i class="fa fa-arrow-circle-right"></i>
@@ -178,7 +180,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="panel-footer announcement-bottom">
                         <div class="row">
                             <div class="col-xs-6">
-                                Go
+                                GO
                             </div>
                             <div class="col-xs-6 text-right">
                                 <i class="fa fa-arrow-circle-right"></i>
@@ -226,11 +228,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="index.php?c=admin&a=changePwd">
                     <div class="panel-footer announcement-bottom">
                         <div class="row">
                             <div class="col-xs-6">
-                                Complete
+                                GO
                             </div>
                             <div class="col-xs-6 text-right">
                                 <i class="fa fa-arrow-circle-right"></i>
@@ -252,11 +254,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="index.php?c=admin&a=clear">
                     <div class="panel-footer announcement-bottom">
                         <div class="row">
                             <div class="col-xs-6">
-                                Complete
+                                GO
                             </div>
                             <div class="col-xs-6 text-right">
                                 <i class="fa fa-arrow-circle-right"></i>
@@ -276,17 +278,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="row">
                 <div class="col-md-6">
                     <table class="table table-striped">
-                      <span style="text-align: center"> <h4>系统信息</h4></span>
                         <thead>
+                        <span style="text-align: center;"> <h3 class="h3"  style="margin-top: 10px;">系统信息</h3></span>
+                        </thead>
                         <tr>
                             <td>卓越CMS版本</td>
                             <td>1.0</td>
                         </tr>
-                        </thead>
+
                         <tbody>
                         <tr>
                             <td>操作系统</td>
-                            <td>Windows</td>
+                            <td>Windows8</td>
                         </tr>
                         <tr>
                             <td>运行环境</td>
@@ -313,7 +316,48 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
 
                 <div class="col-md-6">
+                    <table class="table table-bordered">
+                        <thead>
 
+                        <tr>
+                            <th colspan="2" ><h3 class="h3" style="margin-top: 0">用户信息</h3></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td class="col-md-3">姓名</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user_info']->value['lastName'];?>
+<?php echo $_smarty_tpl->tpl_vars['user_info']->value['firstName'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>网站名称</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user_info']->value['siteName'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>ICP备案号</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user_info']->value['icp'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>QQ</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user_info']->value['qq'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user_info']->value['email'];?>
+</td>
+                        </tr>
+                        <tr>
+                            <td>介绍信息</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user_info']->value['copyright'];?>
+</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
 
             </div>
@@ -324,7 +368,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 </div>
 
-
+</div>
 <div class="row-fluid footer">
     <div class="span12"><font style="color: #318c14">2015 &copy; PHPGOTO. </font>><a href="http://www.phpgoto.com"
                                                                                      target="_blank"><i

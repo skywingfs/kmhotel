@@ -1,0 +1,172 @@
+{{extends file="../admin/index.html"}}
+{{block name=cssjs}}
+{{/block}}
+{{block name=nav}}文章列表{{/block}}
+{{block name=title}}文章列表
+<hr/>{{/block}}
+{{block name=notice}}{{/block}}
+
+{{block name=main}}
+
+<div class="botton_art b1">
+    <a href="index.php?c=article&a=add&id={{$cateId}}">
+        <button class="btn btn-info" type="submit">添加文章</button>
+    </a>
+    <button class="btn btn-danger del_all"  data-toggle="modal" data-target="#delAllModal">删除</button>
+</div>
+<br/>
+<div class="bs-example" data-example-id="bordered-table">
+    <form class="mainform" action="" method="post" style="min-height:500px;">
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th colspan="5">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="checkAll">全选
+                        </label>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            {{foreach $contents as $content}}
+            <tbody>
+            <tr>
+                <th scope="row" style="width:1%;"><span class="glyphicon glyphicon-resize-vertical"
+                                                        aria-hidden="true"></span></th>
+                <td>标题</td>
+                <td>所属栏目</td>
+                <td>发布日期</td>
+                <th style="width:1%;">
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></th>
+            </tr>
+            <tr class="">
+                <th scope="row">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="ok2" name="items[]" value="{{$content.id}}" >
+                        </label>
+                    </div>
+                </th>
+                <td class="title">{{$content.title}}</td>
+                <td>{{$content.cateName}}</td>
+                <td>{{date('Y-m-d H:i:s',$content.time)}}</td>
+                <th>
+                    <p class="p1">
+                        <a href="index.php?c=article&a=edit_art&id={{$content.id}}">
+                            <span class="glyphicon glyphicon-pencil p1" aria-hidden="true"></span>
+                        </a>
+
+                        <a href="#delModal" data-toggle="modal"
+                           data-id2="{{$content.id}}" class="del_one">
+                            <span class="glyphicon glyphicon-remove p1" aria-hidden="true"></span>
+                        </a>
+                    </p>
+                </th>
+            </tr>
+            </tbody>
+            {{/foreach}}
+        </table>
+        {{$page_show}}
+    </form>
+</div>
+
+<!--模态框  单条删除-->
+<div class="modal fade bs-example-modal-sm" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="delModalLabel">
+                    删除一篇文章
+                </h4>
+            </div>
+            <form action="" method="post" class="form2">
+                <div class="modal-body">
+                    你确定删除“ <span id="title"></span>”吗？
+                    <input type="hidden" value="" name="id" class="m_id2">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        确定删除
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--模态框  批量删除-->
+<div class="modal fade bs-example-modal-sm" id="delAllModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="delAllModalLabel">
+                    删除文章
+                </h4>
+            </div>
+            <div class="modal-body">
+                你确定删除吗？
+                <input type="hidden" value="" name="id" class="m_id2">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消
+                </button>
+                <button type="submit" class="btn btn-primary del-links">
+                    确定删除
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="">
+    $(function () {
+        $("#checkAll").click(function () {
+            $(':checkbox').prop("checked", this.checked);
+        });
+
+        $(".del_one").click(function(){
+            $(".form2").attr("action", "index.php?c=article&a=del_one");
+            var id = $(this).attr("data-id2");
+            var title=$(this).parents("tr").children(".title").text();
+
+            $("#title").text(title);
+            $(".m_id2").val(id);
+        });
+
+        $(".del_all").click(function(){
+            if(!($("input[type='checkbox']").is(':checked'))){
+                alert("您并没有选中任何一篇文章！");
+                return false;
+            }
+        });
+
+        //模态框提交
+        $(".del-links").click(function(){
+            $(".mainform").attr("action", "index.php?c=article&a=del_all").submit();
+        })
+    });
+
+
+</script>
+
+{{/block}}

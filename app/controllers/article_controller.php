@@ -26,7 +26,11 @@ class ArticleController extends CommonController
 
     function add(){
         $cates=$this->model->all_cates();
+        $id=$_GET['id'];
+        //$cateId=$_GET['cateId'];
         $this->assign("cates",$cates);
+        $this->assign("id",$id);
+
         $this->display();
     }
 
@@ -49,7 +53,7 @@ class ArticleController extends CommonController
         $sum=substr($sum,0,-1);
         $arr['attach_path']=$sum;
 
-       // dump($arr);
+       //dump($arr);
         $this->model->insert_art($arr);
         $this->jump("index.php?c=article","");
     }
@@ -139,4 +143,25 @@ class ArticleController extends CommonController
         }
     }
 
+
+    function show_cate(){
+
+        $p= isset($_GET["p"]) ? $_GET["p"] : "1";       //当前是第几页
+        $page_size = C("page_size");                   //每页多少条数据
+        $count = $this->model->count_art();         //总共多少条数据
+        $page_count = round($count/$page_size);         //页面总数
+
+        require(LIB_PATH."/page.php");
+        $cateId= isset($_GET["cateId"]) ? "&cateId=".$_GET["cateId"] : "";
+        $page = new Page($p, $page_size, $page_count, "index.php?c=article&a=show_cate".$cateId);
+        $this->assign("page_show", $page->page_show());
+        $limit = ($p-1)*$page_size;                   //limit起始数字
+
+        $cateId=$_GET['cateId'];
+        $contents=$this->model->showCate($cateId,$limit,$page_size);
+        //dump($contents);exit;
+        $this->assign('contents',$contents);
+        $this->assign('cateId',$cateId);
+        $this->display();
+    }
 }

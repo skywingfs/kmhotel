@@ -42,6 +42,7 @@ class CommonModel
      * @return array
      */
     function all($sql){
+        //echo $sql;
         $result = $this->db->query($sql);
         $array = array();
         while($row = $result->fetch_assoc()){
@@ -56,6 +57,7 @@ class CommonModel
      * @return mixed
      */
     function one($sql){
+      //  echo $sql;
         $result = $this->db->query($sql);
         $row = $result->fetch_assoc();
         return $row;
@@ -77,7 +79,7 @@ class CommonModel
         $keys = "`" . join("`,`", array_keys($array)) . "`";
         $vals = "'" . join("','", array_values($array)) . "'";
         $sql = "insert  {$table}({$keys})values({$vals})";
-        //echo $sql;
+       // echo $sql;exit;
         // mysql_query($sql);
         $this->db->query($sql);
         // echo  mysqli_insert_id($this->db);
@@ -103,8 +105,7 @@ class CommonModel
         $sets=rtrim($sets,','); //去掉SQL里的最后一个逗号
         //echo $sets;
         $sql = "update {$table} set {$sets} " . ($where == null ? null : " where " . $where);
-//       echo $sql;
-//        exit;
+      //echo $sql;  exit;
         $result=$this->db->query($sql);
         if ($result) {
             return mysqli_affected_rows($this->db);

@@ -50,13 +50,14 @@
 					</div>
 					<div class="form-group">
 						<label for="j_captcha" class="t">验证码：</label>
-						 <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
-						<img id="captcha_img" alt="点击更换" title="点击更换" src="{{$assets}}/images/captcha.jpeg" class="m">
-					</div>
+						 <input id="j_captcha" name="verify" type="text" class="form-control x164 in"/>
+                        <a href="#"><img src="/lib/code.php" onclick="javascript:this.src='/lib/code.php?tm='+Math.random();" />
+                        </a>
+                    </div>
 					<div class="form-group">
 						<label class="t"></label>
 						<label for="j_remember" class="m">
-						<input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!</label>
+						<input id="j_remember" name="rem" type="checkbox" value="1">&nbsp;记住登陆账号!</label>
 					</div>
 					<div class="form-group space">
 						<label class="t"></label>　　　

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-06 14:55:02
+<?php /* Smarty version Smarty-3.1.20, created on 2015-07-16 08:14:23
          compiled from "C:\wamp\www\kmhotel\app\views\file\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:24140559640f18c3f18-43038330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1664055a52dbf6af6d5-73929233%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -13,23 +13,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1436187297,
+      1 => 1437022165,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24140559640f18c3f18-43038330',
+  'nocache_hash' => '1664055a52dbf6af6d5-73929233',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_559640f19d4f68_23990423',
+  'unifunc' => 'content_55a52dbf845347_36764278',
   'variables' => 
   array (
     'assets' => 0,
+    'user' => 0,
+    'server_info' => 0,
+    'user_info' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_559640f19d4f68_23990423')) {function content_559640f19d4f68_23990423($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55a52dbf845347_36764278')) {function content_55a52dbf845347_36764278($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -86,7 +89,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     &nbsp;&nbsp;内容管理 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="index.php?c=article">文章列表</a></li>
-                    <li><a href="#">栏目管理</a></li>
+                    <li><a href="index.php?c=column">栏目管理</a></li>
                 </ul>
             </li>
             <li><a href="index.php?c=file"><i class="fa fa-desktop"></i> &nbsp;&nbsp;文件管理</a></li>
@@ -95,78 +98,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i>
                     &nbsp;&nbsp;系统设置 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">站点信息</a></li>
+                    <li><a href="index.php?c=admin&a=site_info">站点信息</a></li>
                     <li><a href="index.php?c=admin&a=changePwd">密码修改</a></li>
                 </ul>
             </li>
             <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
-            <!--<li class="dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>-->
-                    <!--&nbsp;&nbsp;Dropdown <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Dropdown Item</a></li>-->
-                    <!--<li><a href="#">Another Item</a></li>-->
-                    <!--<li><a href="#">Third Item</a></li>-->
-                    <!--<li><a href="#">Last Item</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">
-            <!--<li class="dropdown messages-dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span-->
-                        <!--class="badge">6</span> <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li class="dropdown-header">6 New Messages</li>-->
-                    <!--<li class="message-preview">-->
-                        <!--<a href="#">-->
-                            <!--<span class="avatar"><img src="http://placehold.it/50x50"></span>-->
-                            <!--<span class="name">John Smith:</span>-->
-                            <!--<span class="message">Hey there, I wanted to ask you something...</span>-->
-                            <!--<span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-
-                    <!--<li class="divider"></li>-->
-                    <!--<li class="message-preview">-->
-                        <!--<a href="#">-->
-                            <!--<span class="avatar"><img src="http://placehold.it/50x50"></span>-->
-                            <!--<span class="name">John Smith:</span>-->
-                            <!--<span class="message">Hey there, I wanted to ask you something...</span>-->
-                            <!--<span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">View Inbox <span class="badge">7</span></a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
-            <!--<li class="dropdown alerts-dropdown">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span-->
-                        <!--class="badge">3</span> <b class="caret"></b></a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Default <span class="label label-default">Default</span></a></li>-->
-                    <!--<li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>-->
-                    <!--<li><a href="#">Success <span class="label label-success">Success</span></a></li>-->
-                    <!--<li><a href="#">Info <span class="label label-info">Info</span></a></li>-->
-                    <!--<li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>-->
-                    <!--<li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li><a href="#">View All</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
             <li>
-                <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
+            <a href="index.php" target="_blank"><i class="fa fa-forward"></i>&nbsp;&nbsp;查看前台</a>
             </li>
             <li class="dropdown user-dropdown" style="margin-right: 40px;">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的 Admin <b
-                        class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;尊敬的<?php echo $_smarty_tpl->tpl_vars['user']->value['username'];?>
+
+                   <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;安全登出</a></li>
+                    <li><a href="index.php?c=user&a=logout"><i class="fa fa-power-off"></i>&nbsp;&nbsp;安全登出</a></li>
                 </ul>
             </li>
         </ul>
     </div>
-    <!-- /.navbar-collapse -->
 </nav>
 
 <div id="page-wrapper">
@@ -174,7 +127,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;文件管理</li>
+                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;文件管理
+                </li>
             </ol>
             <h1>
 
@@ -307,19 +261,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     //]]>
 </script>
 
-</div>
 
 
 </div>
 
-
+</div>
 <div class="row-fluid footer">
-    <div  class="span12"> <font style="color: #318c14">2015 &copy; PHPGOTO. </font>><a href="http://www.phpgoto.com" target="_blank"><i class="fa fa-arrow-circle-right"></i> PHPGOTO.COM</a>
+    <div class="span12"><font style="color: #318c14">2015 &copy; PHPGOTO. </font>><a href="http://www.phpgoto.com"
+                                                                                     target="_blank"><i
+            class="fa fa-arrow-circle-right"></i> PHPGOTO.COM</a>
     </div>
 </div>
-
-
-
 
 
 <!-- Page Specific Plugins -->

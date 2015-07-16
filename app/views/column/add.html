@@ -41,9 +41,19 @@
                         <div class="form-group">
                             <label class="control-label col-md-2" style="text-align: center">父栏目</label>
                             <div class="col-md-10">
-                                <select class="js-example-basic-single" style="width:60%" name="cateid">
+                                <select class="js-example-basic-single" style="width:60%" name="pid">
+                                   <option value="0">顶级栏目</option>
                                     {{foreach $cates as $cate}}
-                                    <option value="{{$cate.id}}">{{$cate.cateName}}</option>
+                                    <option value="{{$cate.id}}"
+                                            {{if $id eq $cate.id}}
+                                    selected='selected';
+                                    {{/if}}
+                                            >
+                                        {{for $i=0; $i<$cate.count; $i++ }}
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        {{/for}}
+                                        {{$cate.cateName}}
+                                    </option>
                                     {{/foreach}}
                                 </select>
                             </div>
@@ -54,16 +64,16 @@
 
                             <div class="col-md-10">
                                 <input type="text" class="form-control" id="title"
-                                       placeholder="栏目名称" name="title" style="width:40%">
+                                       placeholder="栏目名称" name="cateName" style="width:40%">
                             </div>
                         </div>
 
                         <div class="form-group" style="">
-                            <label for="title" class="col-md-2" style="text-align: center">拼音</label>
+                            <label for="pinyin" class="col-md-2" style="text-align: center">拼音</label>
 
                             <div class="col-md-10">
                                 <input type="text" class="form-control" id="pinyin"
-                                       placeholder="栏目拼音" name="title" style="width:40%">
+                                       placeholder="栏目拼音" name="pinyin" style="width:40%">
                             </div>
                         </div>
 
@@ -71,22 +81,22 @@
                             <label for="type" class="col-md-2" style="text-align: center">类型</label>
 
                             <div class="col-md-10" id="type">
-                                <input type="radio" name="type"  id="" value="m" checked="checked"/>封面
+                                <input type="radio" name="type"  id="" value="0" checked="checked"/>封面
                                 <br/>
-                                <input type="radio" name="type" value="f"/>列表
+                                <input type="radio" name="type" value="1"/>列表
                                 <br/>
-                                <input type="radio" name="type" value="f"/>URL跳转
+                                <input type="radio" name="type" value="2"/>URL跳转
                             </div>
                         </div>
 
 
 
                         <div class="form-group" style="">
-                            <label for="title" class="col-md-2" style="text-align: center">URL跳转地址</label>
+                            <label for="address" class="col-md-2" style="text-align: center">URL跳转地址</label>
 
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="url"
-                                       placeholder="如果选择了URL跳转，请填写地址" name="title" style="width:40%">
+                                <input type="text" class="form-control" id="address"
+                                       placeholder="如果选择了URL跳转，请填写地址" name="address" style="width:40%">
                             </div>
                         </div>
 
@@ -94,9 +104,9 @@
                             <label for="" class="col-md-2" style="text-align: center">是否显示</label>
 
                             <div class="col-md-10">
-                                <input type="radio" name="gender"   value="m" checked="checked"/>是
+                                <input type="radio" name="is_show"   value="1" checked="checked"/>是
                                 <br/>
-                                <input type="radio" name="gender" value="f"/>否
+                                <input type="radio" name="is_show" value="0"/>否
                             </div>
                         </div>
                     </div>
@@ -114,7 +124,7 @@
             </div>
             <div class="col-md-4 col-md-offset-5">
                 <button class="btn btn-success" type="submit">添加</button>
-                <button class="btn btn-danger" type="submit">返回</button>
+                <button class="btn btn-danger">返回</button>
             </div>
         </form>
 

@@ -6,6 +6,8 @@ class AdminController extends CommonController {
   function index(){
     // dump($_SESSION);
       $this->assign('server_info', $this->show_info());
+      $user_info=$this->model->user_info();
+      $this->assign('user_info',$user_info);
       $this->display();
 
   }
@@ -81,18 +83,61 @@ class AdminController extends CommonController {
     }
 
     function changePwd(){
+//        dump($_SESSION);exit;
+        $user=$_SESSION['user'];
+        $this->assign('user',$user);
         $this->display();
     }
 
+    function do_change(){
+        $arr=$_POST;
+//        dump($arr);exit;
+        $username=$arr['username'];
+        $old_password=$arr['old_password'];
+        if($arr['new_password1']!=$arr['new_password2']){
+            $this->jump("index.php?c=admin&a=changePwd","您输入的密码不一致！");
+        }
+        $password=$this->model->one_user($username);
+        //echo $password;exit;
+        if($password!=md5($old_password)){
+            $this->jump("index.php?c=admin&a=changePwd","原始密码错误，无法修改");
+            return;
+        }
+        $arr['password']=md5($arr['new_password1']);
+        unset($arr['new_password2']);
+        unset($arr['new_password1']);
+        unset($arr['old_password']);
+       // dump($arr);exit;
+        $this->model->update_pwd($arr,$_SESSION['user']['id']);
+        $this->jump("index.php?c=admin&a=changePwd","您的密码已经修改成功");
 
 
+    }
 
 
+    function  site_info(){
+        $site_info=$this->model->user_info();
+        $this->assign('site_info',$site_info);
+        $this->display();
+    }
 
-  function test(){
-    echo 123123;
-  }
+    function edit_site(){
+        $arr=$_POST;
+        //dump($arr);exit;
+        $this->model->do_edit_site($arr);
+        $this->jump("index.php?c=admin&a=site_info","");
+    }
 
+
+    function clear(){
+
+    $this->display();
+    }
+
+    function do_clear(){
+        $this->clearAllCache();
+        $this->jump("index.php?c=admin&a=clear","缓存清理成功");
+    }
 
 
 }

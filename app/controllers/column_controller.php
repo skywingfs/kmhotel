@@ -31,10 +31,19 @@ function del_column(){
 
     function add(){
         $cates=$this->model->all_cates();
-
+        $id=$_GET['id'];
         $this->assign("cates",$cates);
+        $this->assign("id",$id);
 
         $this->display();
+    }
+
+    function do_add(){
+        if($_POST){
+        $arr=$_POST;
+           $this->model->add_column($arr);
+            $this->jump("index.php?c=column","");
+        }
     }
 
     function sort(){
@@ -45,6 +54,20 @@ function del_column(){
         }
     }
 
+    function edit(){
+        $id=$_GET['id'];
+        $cate1= $this->model->one_cate($id);
+        $cates=$this->model->all_cates();
+        $this->assign('cate1',$cate1);
+        $this->assign('cates',$cates);
+        $this->display();
+    }
 
 
+    function do_edit(){
+        $arr=$_POST;
+        $id=$_GET['id'];
+        $this->model->update_column($arr,$id);
+        $this->jump("index.php?c=column","");
+    }
 }

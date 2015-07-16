@@ -2,6 +2,12 @@
 
 class AdminModel extends CommonModel
 {
+
+    function user_info(){
+        $user_info=$this->one("select * from site_info");
+        return $user_info;
+    }
+
     function all_links()
     {
         $links = $this->all("select * from flink order by orderId");
@@ -39,5 +45,22 @@ class AdminModel extends CommonModel
         foreach($items as $v){
         $this->delete("flink","id='$v'");
         }
+    }
+
+  function do_edit_site($arr){
+        $this->update("site_info",$arr);
+  }
+
+
+    function one_user($username){
+        $password=$this->one("select password from users where `username`='$username'");
+
+        return $password['password'];
+    }
+
+
+    function update_pwd($arr,$id){
+        $this->update("users",$arr,"id=$id");
+
     }
 }
