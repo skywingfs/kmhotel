@@ -1,0 +1,22 @@
+{{extends file="index.html"}}
+{{block name=nav}}清除缓存{{/block}}
+{{block name=title}}清除缓存
+<hr/>{{/block}}
+{{block name=notice}}{{/block}}
+
+{{block name=main}}
+
+<div class="panel panel-info">
+    <div class="panel-heading">  <span class="fa fa-bars" aria-hidden="true">&nbsp;&nbsp;清除缓存</span></div>
+    <div class="panel-body">
+
+        <p>
+            <a href="index.php?c=admin&a=do_clear" class="btn btn-warning btn-large"><i
+                    class="icon-trash"></i> 点击清除缓存</a>
+        </p>
+    </div>
+</div>
+
+
+
+{{/block}}

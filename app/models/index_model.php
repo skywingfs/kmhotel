@@ -24,7 +24,8 @@ class IndexModel extends CommonModel
 
 
     function  all_cates(){
-        $cates=$this->all("select * from category");
+        $cates=$this->all("select * from category where pid=0");
+
         return $cates;
     }
 
@@ -42,4 +43,5 @@ class IndexModel extends CommonModel
 //        $time = time();
 //        $this->db->query("insert into comm (`title`, `content`, `time`) values ('$title', '$content', '$time')" );
 //    }
+
 }

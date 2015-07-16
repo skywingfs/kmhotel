@@ -109,7 +109,8 @@ class AdminController extends CommonController {
         unset($arr['old_password']);
        // dump($arr);exit;
         $this->model->update_pwd($arr,$_SESSION['user']['id']);
-        $this->jump("index.php?c=admin&a=changePwd","您的密码已经修改成功");
+        $this->clearSession();
+        $this->jump("index.php?c=user&a=login","您的密码已经修改成功");
 
 
     }
@@ -134,9 +135,46 @@ class AdminController extends CommonController {
     $this->display();
     }
 
-    function do_clear(){
-        $this->clearAllCache();
-        $this->jump("index.php?c=admin&a=clear","缓存清理成功");
+    function do_clear()
+    {
+        $directory=SITE_PATH."/app/views/smarty/templates_c";
+//        echo $directory;
+        $this->delDir($directory);
+            $this->jump("index.php?c=admin&a=clear", "缓存清理成功");
+
+    }
+
+    function delDir($directory) {
+        //判断目录是否存在，如果不存在rmdir()函数会出错
+        if(file_exists($directory)) {
+            //打开目录返回目录资源，并判断是否成功
+            if($dir_handle=@opendir($directory)) {
+                //遍历目录，读出目录中的文件或文件夹
+                while($filename=readdir($dir_handle)) {
+                    //一定要排除两个特殊的目录
+                    if($filename!="." && $filename!="..") {
+                        //将目录下的文件和当前目录相连
+                        $subFile=$directory."/".$filename;
+                        //如果是目录条件则成立
+                        if(is_dir($subFile)) {
+                            //递归调用自己删除子目录
+                            delDir($subFile);
+                        }
+                        //如果是文件条件则成立
+                        if(is_file($subFile)){
+                            //直接删除这个文件
+                            unlink($subFile);
+                        }
+                    }
+                }
+
+                //关闭目录资源
+                closedir($dir_handle);
+
+                //删除空目录
+                rmdir($directory);
+            }
+        }
     }
 
 

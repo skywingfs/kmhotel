@@ -1,28 +1,26 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-16 08:14:23
-         compiled from "C:\wamp\www\kmhotel\app\views\file\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:1664055a52dbf6af6d5-73929233%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2015-07-16 10:48:25
+         compiled from "C:\wamp\www\kmhotel\app\views\admin\clear.html" */ ?>
+<?php /*%%SmartyHeaderCode:3095755a76fd92dfe32-69601366%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a247977c7d2159de99bfa8818bb23ece28e2f279' => 
+    'f42b67e67dc4b1ac44e4beacc2a8903ca439b5de' => 
     array (
-      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\file\\index.html',
-      1 => 1436166344,
+      0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\clear.html',
+      1 => 1437028634,
       2 => 'file',
     ),
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1437022165,
+      1 => 1437028316,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1664055a52dbf6af6d5-73929233',
+  'nocache_hash' => '3095755a76fd92dfe32-69601366',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_55a52dbf845347_36764278',
   'variables' => 
   array (
     'assets' => 0,
@@ -31,8 +29,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'user_info' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_55a76fd94b8860_05539880',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a52dbf845347_36764278')) {function content_55a52dbf845347_36764278($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55a76fd94b8860_05539880')) {function content_55a76fd94b8860_05539880($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -60,8 +60,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /bootstrap/js/bootstrap.min.js"></script>
     
-<script type="text/javascript" src="/vendor/ckfinder/ckfinder.js"></script>
-        
 </head>
 <body>
 
@@ -102,7 +100,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li><a href="index.php?c=admin&a=changePwd">密码修改</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
+            <li><a href="index.php?c=admin&a=clear"><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
 
         </ul>
 
@@ -127,139 +125,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;文件管理
+                <li class="active"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;清除缓存
                 </li>
             </ol>
-            <h1>
-
+            <h1>清除缓存
+<hr/>
             </h1>
             
         </div>
     </div>
 
     
-<div id="ckfinder" style="margin-top:-38px;"></div>
-<script type="text/javascript">
-    //<![CDATA[
-    (function()
-    {
-        var config = {};
-        var get = CKFinder.tools.getUrlParam;
-        var getBool = function( v )
-        {
-            var t = get( v );
 
-            if ( t === null )
-                return null;
+<div class="panel panel-info">
+    <div class="panel-heading">  <span class="fa fa-bars" aria-hidden="true">&nbsp;&nbsp;清除缓存</span></div>
+    <div class="panel-body">
 
-            return t == '0' ? false : true;
-        };
+        <p>
+            <a href="index.php?c=admin&a=do_clear" class="btn btn-warning btn-large"><i
+                    class="icon-trash"></i> 点击清除缓存</a>
+        </p>
+    </div>
+</div>
 
-        var tmp;
-        if ( tmp = get( 'configId' ) )
-        {
-            var win = window.opener || window;
-            try
-            {
-                while ( ( !win.CKFinder || !win.CKFinder._.instanceConfig[ tmp ] ) && win != window.top )
-                    win = win.parent;
 
-                if ( win.CKFinder._.instanceConfig[ tmp ] )
-                    config = CKFINDER.tools.extend( {}, win.CKFinder._.instanceConfig[ tmp ] );
-            }
-            catch(e) {}
-        }
 
-        if ( tmp = get( 'basePath' ) )
-            CKFINDER.basePath = tmp;
-
-        if ( tmp = get( 'startupPath' ) || get( 'start' ) )
-            config.startupPath = decodeURIComponent( tmp );
-
-        config.id = get( 'id' ) || '';
-
-        if ( ( tmp = getBool( 'rlf' ) ) !== null )
-            config.rememberLastFolder = tmp;
-
-        if ( ( tmp = getBool( 'dts' ) ) !== null )
-            config.disableThumbnailSelection = tmp;
-
-        if ( tmp = get( 'data' ) )
-            config.selectActionData = tmp;
-
-        if ( tmp = get( 'tdata' ) )
-            config.selectThumbnailActionData = tmp;
-
-        if ( tmp = get( 'type' ) )
-            config.resourceType = tmp;
-
-        if ( tmp = get( 'skin' ) )
-            config.skin = tmp;
-
-        if ( tmp = get( 'langCode' ) )
-            config.language = tmp;
-
-        if ( typeof( config.selectActionFunction ) == 'undefined' )
-        {
-            // Try to get desired "File Select" action from the URL.
-            var action;
-            if ( tmp = get( 'CKEditor' ) )
-            {
-                if ( tmp.length )
-                    action = 'ckeditor';
-            }
-            if ( !action )
-                action = get( 'action' );
-
-            var parentWindow = ( window.parent == window ) ? window.opener : window.parent;
-            switch ( action )
-            {
-                case 'js':
-                    var actionFunction = get( 'func' );
-                    if ( actionFunction && actionFunction.length > 0 )
-                        config.selectActionFunction = parentWindow[ actionFunction ];
-
-                    actionFunction = get( 'thumbFunc' );
-                    if ( actionFunction && actionFunction.length > 0 )
-                        config.selectThumbnailActionFunction = parentWindow[ actionFunction ];
-                    break ;
-
-                case 'ckeditor':
-                    var funcNum = get( 'CKEditorFuncNum' );
-                    if ( parentWindow['CKEDITOR'] )
-                    {
-                        config.selectActionFunction = function( fileUrl, data )
-                        {
-                            parentWindow['CKEDITOR'].tools.callFunction( funcNum, fileUrl, data );
-                        };
-
-                        config.selectThumbnailActionFunction = config.selectActionFunction;
-                    }
-                    break;
-
-                default:
-                    if ( parentWindow && parentWindow['FCK'] && parentWindow['SetUrl'] )
-                    {
-                        action = 'fckeditor' ;
-                        config.selectActionFunction = parentWindow['SetUrl'];
-
-                        if ( !config.disableThumbnailSelection )
-                            config.selectThumbnailActionFunction = parentWindow['SetUrl'];
-                    }
-                    else
-                        action = null ;
-            }
-            config.action = action;
-        }
-
-        // Always use 100% width and height when nested using this middle page.
-        config.width =  '100%';
-        config.height =500;
-        var ckfinder = new CKFinder( config );
-        ckfinder.replace( 'ckfinder', config );
-    })();
-    //]]>
-</script>
 
 
 

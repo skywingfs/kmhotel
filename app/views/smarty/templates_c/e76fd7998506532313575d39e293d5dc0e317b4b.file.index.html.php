@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2015-07-16 07:04:46
+<?php /* Smarty version Smarty-3.1.18, created on 2015-07-16 10:48:35
          compiled from "C:\wamp\www\kmhotel\app\views\column\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:2442855a503ecb9bbc4-12247344%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:96955a76fe35e7dd6-94834256%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -13,16 +13,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\admin\\index.html',
-      1 => 1437022165,
+      1 => 1437028316,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2442855a503ecb9bbc4-12247344',
+  'nocache_hash' => '96955a76fe35e7dd6-94834256',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_55a503ecdead85_42504636',
   'variables' => 
   array (
     'assets' => 0,
@@ -31,8 +29,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'user_info' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_55a76fe38ae3c8_89387912',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a503ecdead85_42504636')) {function content_55a503ecdead85_42504636($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55a76fe38ae3c8_89387912')) {function content_55a76fe38ae3c8_89387912($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -101,7 +101,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li><a href="index.php?c=admin&a=changePwd">密码修改</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
+            <li><a href="index.php?c=admin&a=clear"><i class="fa fa-trash-o"></i> &nbsp;&nbsp;清除缓存</a></li>
 
         </ul>
 

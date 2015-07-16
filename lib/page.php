@@ -9,7 +9,6 @@ class Page
 
     function __construct($p, $page_size, $page_count, $url = "")
     {
-
         $this->p = $p;
         $this->page_size = $page_size;
         $this->page_count = $page_count;
