@@ -1,0 +1,44 @@
+{{extends file="front.html"}}
+{{block name=position}}您的位置：首页 >> 产品中心 >> {{/block}}
+{{block name=title}}产品中心
+{{/block}}
+{{block name=main_css}} <div class="main detail"> {{/block}}
+    {{block name=main}}
+    <div class="cont">
+        <div class='tit'><h1>{{$art.title}}</h1></div>
+        <div class='related'><p>修改时间:{{date('Y-m-d H:i:s',$art.time)}} 浏览次数：{{$art.hits}}次</p></div>
+        {{$art.content}}
+    </div>
+    <div class='other'>
+        <ul>
+            <li>上一条信息：
+                {{if $front.title eq null}}
+                已经是第一篇文章
+                {{else}}
+                <a href="index.php?c=index&a=show_art&id={{$front.id}}" target='_self'>
+                    {{$front.title}}
+                    {{/if}}
+                </a>
+            </li>
+            <li>下一条信息：
+                {{if $next.title eq null}}
+                已经是最后一篇文章
+                {{else}}
+                <a href="index.php?c=index&a=show_art&id={{$next.id}}"  target='_self'>
+                    {{$next.title}}
+                    {{/if}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class='print'><a href='javascript:window.print();'>【打印此文】</a>&nbsp;<a
+            href='javascript:window.close();'>【关闭窗口】</a></div>
+</div>
+</div>
+</div>
+{{/block}}
+
+
+
+
+

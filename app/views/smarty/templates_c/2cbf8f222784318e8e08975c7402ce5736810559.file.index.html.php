@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-07-16 10:48:33
+<?php /* Smarty version Smarty-3.1.18, created on 2015-07-21 08:03:35
          compiled from "C:\wamp\www\kmhotel\app\views\article\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:395055a76fe111ba26-48196305%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:928755ade0b780e2f1-91814873%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2cbf8f222784318e8e08975c7402ce5736810559' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\article\\index.html',
-      1 => 1436975892,
+      1 => 1437457249,
       2 => 'file',
     ),
     'fffb6e872d82df4ac1a873d27e1e296f24f38676' => 
@@ -17,7 +17,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '395055a76fe111ba26-48196305',
+  'nocache_hash' => '928755ade0b780e2f1-91814873',
   'function' => 
   array (
   ),
@@ -30,9 +30,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_55a76fe134fb09_94504937',
+  'unifunc' => 'content_55ade0b79d3269_36974296',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a76fe134fb09_94504937')) {function content_55a76fe134fb09_94504937($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55ade0b79d3269_36974296')) {function content_55ade0b79d3269_36974296($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -189,7 +189,7 @@ $_smarty_tpl->tpl_vars['content']->_loop = true;
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['content']->value['cateName'];?>
 </td>
-                <td><?php echo date('Y-m-d H:i:s',$_smarty_tpl->tpl_vars['content']->value['time']);?>
+                <td><?php echo date('Y-m-d',$_smarty_tpl->tpl_vars['content']->value['time']);?>
 </td>
                 <th>
                     <p class="p1">

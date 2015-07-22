@@ -7,5 +7,5 @@ $config = array(
     "db_name" =>"kmhotel",
     //不检查的登录页面
     "allow" => array("reg", "do_reg", "login", "do_login"),
-    "page_size" => "2"
+    "page_size" => "5"
 );

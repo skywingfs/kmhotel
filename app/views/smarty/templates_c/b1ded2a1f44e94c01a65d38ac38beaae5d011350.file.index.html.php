@@ -1,29 +1,31 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-07-16 10:48:44
+<?php /* Smarty version Smarty-3.1.18, created on 2015-07-21 12:40:16
          compiled from "C:\wamp\www\kmhotel\app\views\index\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:666755a76fec5b20d1-99990686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:886155ade503c57014-56446771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b1ded2a1f44e94c01a65d38ac38beaae5d011350' => 
     array (
       0 => 'C:\\wamp\\www\\kmhotel\\app\\views\\index\\index.html',
-      1 => 1435556119,
+      1 => 1437467191,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '666755a76fec5b20d1-99990686',
+  'nocache_hash' => '886155ade503c57014-56446771',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_55ade503d12b45_85255195',
   'variables' => 
   array (
     'assets' => 0,
+    'top_cates' => 0,
+    'v' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_55a76fec6e0841_44158185',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a76fec6e0841_44158185')) {function content_55a76fec6e0841_44158185($_smarty_tpl) {?><!doctype html>
+<?php if ($_valid && !is_callable('content_55ade503d12b45_85255195')) {function content_55ade503d12b45_85255195($_smarty_tpl) {?><!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -54,11 +56,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="topnav">
             <a onClick="AddFavorite('http://www.phpgoto.com','昆明卓越一次性用品有限公司')" href="javascript:void(0)" title="加入收藏">
                 &nbsp;加入收藏</a>
-            <a href="contact.asp.htm">&nbsp;联系我们</a>
+            <a href="index.php?c=index&a=contact">&nbsp;联系我们</a>
             <a href="index.php?c=user&a=login">&nbsp;后台登录</a>
         </div>
         <div class="logo">
-            <a href="index.asp.htm">
+            <a href="index.php">
                 <img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /images/logo.png"/>
             </a>
@@ -70,32 +72,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
     <div class="nav">
         <ul>
-            <li><a href="index.asp.htm">首页</a></li>
-            <li><a href="about.asp.htm">公司简介</a></li>
-            <li><a href="news.asp.htm">新闻资讯</a></li>
-            <li><a href="product.asp.htm">产品中心</a></li>
-            <li><a href="case.asp.htm">成功案例</a></li>
-            <li><a href="jobs.asp.htm">人才招聘</a></li>
-            <li><a href="message.asp.htm">在线留言</a></li>
-            <li><a href="contact.asp.htm">联系我们</a></li>
+            <li><a href="index.php">首页</a></li>
+            <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['top_cates']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value) {
+$_smarty_tpl->tpl_vars['v']->_loop = true;
+?>
+            <li><a href="index.php?c=index&a=<?php echo $_smarty_tpl->tpl_vars['v']->value['pinyin'];?>
+&id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value['cateName'];?>
+</a></li>
+            <?php } ?>
         </ul>
     </div>
 </div>
-
-<!--<div class="banner">-->
-<!--<div class="pic_scoll">-->
-<!--<div class="banner_list">-->
-<!--<p><a href="#" target="_blank"><img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/images/20141105162502.jpg"  width='1440'  height='479' /></a></p>-->
-<!--<p><a href="#" target="_blank"><img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/images/20141105162516.jpg"  width='1440'  height='479' /></a></p>-->
-<!--<p><a href="#" target="_blank"><img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/images/20141117184131.jpg"  width='1440'  height='479' /></a></p>-->
-<!--<p><a href="#" target="_blank"><img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/images/20141107152351.jpg"  width='1440'  height='479' /></a></p>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 
 <div id="wrapper">
     <div class="slider-wrapper theme-default">
@@ -105,8 +95,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /images/20141105162502.jpg" alt=""/>
             <img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /images/20141107152351.jpg" data-thumb="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
-/images/20141107152351.jpg" alt=""
-                 title="This is an example of a caption"/>
+/images/20141107152351.jpg" alt=""/>
+            <!--title="This is an example of a caption"-->
             <img src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /images/20141105162516.jpg" data-thumb="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
 /images/20141105162516.jpg" alt=""
@@ -116,11 +106,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /images/20141117184131.jpg" alt=""
                  title="#htmlcaption"/>
         </div>
-        <div id="htmlcaption" class="nivo-html-caption">
-            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
-        </div>
+        <!--<div id="htmlcaption" class="nivo-html-caption">-->
+        <!--<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.-->
+        <!--</div>-->
     </div>
-    <div class="footer-banner" style="width:728px; margin:0 auto"></div>
+    <!--<div class="footer-banner" style="width:728px; margin:0 auto"></div>-->
 </div>
 
 

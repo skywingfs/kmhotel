@@ -57,3 +57,116 @@
 .nav li a.on {
   color: #318c14;
 }
+
+#content{ width:1000px; margin:0 auto; background:#ffffff; padding-top:24px;}
+#content .title h3{ color:#2c8510; font-size:15px; font-family:Arial;}
+#content .title h3 span{ font-size:14px; color:#696969;  font-family:Arial; text-transform:uppercase;}
+.product{ width:1000px; height:180px; overflow:hidden; border-bottom:1px dotted #cccccc}
+.product .title{ float:left; width:173px; height:165px; margin-left:1px;}
+.product .cont{ float:left; width:826px;}
+.product li .photo,.ny_pro li .photo{ width:176px; height:138px;}
+.product li p,.ny_pro li p{ height:34px; line-height:34px;}
+.product li,.ny_pro li{ float:left; width:176px; height:172px; margin:0 14px; text-align:center;}
+.ny_pro li{ margin:0 13px;}
+.ny_pro ul{ float:left; margin:0 -13px;}
+
+.section{ height:260px; overflow:hidden}
+.section .title{ padding-left:13px; padding-top:13px;}
+.section .title a{ float:right; margin:4px 10px 0 0;}
+.about{ float:left; width:407px;}
+.about .cont{ line-height:30px; padding:8px 7px 0 15px;}
+.about .cont img{ float:left; margin:7px 15px 0 0;}
+
+.news{ float:left; width:360px; border-right:1px dotted #cccccc;border-left:1px dotted #cccccc}
+.news li,.ny_news li{ height:33px; line-height:33px; background:url("../images/index_34.gif")/*tpa=http://www.whtyxjdyp.com/images/index_34.gif*/ 4px center no-repeat; padding-left:22px; border-bottom:1px dashed #999999}
+.ny_news li span{ float:right}
+.news ul{ padding:6px 13px 0;}
+
+.contact{ float:right; width:230px;}
+.contact .cont{ line-height:28px; padding:10px 0 0 9px;}
+.about,.news,.contact{ height:260px; overflow:hidden}
+
+.case{ background:url("../images/index_39.gif")/*tpa=http://www.whtyxjdyp.com/images/index_39.gif*/ no-repeat; width:1000px; height:257px;}
+.case .cont{ padding-top:22px;}
+.case .title{ height:38px; line-height:38px; padding-left:12px;}
+.case .title a{ float:right; margin:18px 11px 0 0;}
+.case li{ float:left; width:204px; height:177px; margin:0 10px; text-align:center}
+.case li .photo{ width:204px; height:153px;}
+.case li p{ height:36px; line-height:36px;}
+.mantle1{position: relative;zoom: 1;width: 1000px;height: 189px;overflow: hidden; margin:0 auto;}
+.mantle1 .cont1{ width: 896px;overflow:hidden; margin:0 auto;}
+#imgul1{ float:left;}
+.fl{float:left;}
+.leftbotton,.rightbotton{ position:absolute; top:53px; width:23px; height:35px; cursor:pointer;}
+.leftbotton{ background:url("../images/index_42.gif")/*tpa=http://www.whtyxjdyp.com/images/index_42.gif*/ no-repeat; left:6px;}
+.rightbotton{ background:url("../images/index_45.gif")/*tpa=http://www.whtyxjdyp.com/images/index_45.gif*/ no-repeat; right:5px;}
+
+#footer{ width:100%; background:url("../images/index_51.gif")/*tpa=http://www.whtyxjdyp.com/images/index_51.gif*/ repeat-x; height:112px; line-height:34px; text-align:center; padding-top:28px; margin-top:15px;}
+
+.side{ float:left; width:208px; margin-left:2px;}
+.sidelist .title{ background:url("../images/p5.gif")/*tpa=http://www.whtyxjdyp.com/images/p5.gif*/ repeat-x; height:36px; line-height:36px; padding-left:12px;}
+.sidelist .title a{ float:right; margin:11px 18px 0 0;}
+.sidelist .title h3{ color:#2c8510; font-size:15pz; font-family:Arial}
+.sidelist .title h3 span{ color:#aaaaaa; font-size:12px; font-family:Arial; text-transform:uppercase;}
+.sidelist ul{ padding:11px 17px; border:1px solid #ececec }
+.sidelist li{ height:25px; line-height:25px; margin-bottom:4px; background:url("../images/p2.gif")/*tpa=http://www.whtyxjdyp.com/images/p2.gif*/ #eaeaea 20px center no-repeat; padding-left:32px;}
+.sidelist li a:hover,.sidelist li a.on{ color:#2c8510}
+
+.nycontact a{ display:block; margin:12px 0 0 ;}
+
+.main{ float:right; width:782px;}
+.main .title{ height:35px; line-height:35px; border-bottom:2px solid #2c8510; padding-left:12px;}
+.main .title span{ float:right; margin-right:10px;}
+.ny_about .cont,.detail .cont{ width:720px; margin:0 auto; line-height:27px;}
+.main .cont{ padding:20px 0; height:auto !important; height:400px; min-height:400px;}
+
+.ny_news ul{ width:720px; margin:0 auto;}
+
+
+.detail .tit { height: 60px; line-height: 60px; text-align: center; font-weight: bold; border-bottom: 1px solid #ccc; overflow:hidden; }
+.detail .related { padding:6px 0; text-align: center; }
+.detail .related span { padding: 0 10px; }
+
+.detail .other {
+    padding: 8px 0;
+    width: 100%;
+}
+.detail .other li {
+    line-height: 24px;
+}
+.detail .print {
+    clear: both;
+    padding: 8px 0;
+    text-align: right;
+}
+.detail .print a {
+    margin-right: 20px;
+}
+
+.ny_msg .cont .bridge { line-height: 40px; color:#858181; text-align: right; padding-right:15px;}
+.ny_msg .cont .bridge a {color:#858181; }
+.ny_msg .cont .welcome { width:100%; border-top: 1px dashed #ccc; height:98px; text-align: center; }
+.ny_msg .cont .welcome img { margin-top:31px; }
+.ny_msg .cont .msg_form { width: 650px; overflow:hidden; margin: 0 auto; }
+.ny_msg .cont .msg_form ul { width:561px; }
+.ny_msg .cont .msg_form li { float:left; margin-bottom:9px; margin-right:22px; display:inline; }
+.ny_msg .cont .msg_form li input { padding-left:10px; color:#969696; width:260px; height:40px; border:0px; line-height:40px; font-size:14px; background:#f0f0f0;  }
+.ny_msg .cont .msg_form li textarea { color:#969696;width:569px; height:146px; background:#f0f0f0; border:0px;  overflow:auto; font-size:14px; padding:10px;}
+.ny_msg .msglist{overflow:hidden;_zoom:1;}
+.ny_msg .msglist ul{margin:-22px 0 0 0;}
+.ny_msg .msglist ul li{margin-bottom:24px; border-top:1px solid #8d8d8d; padding-top:21px;}
+.ny_msg .msglist ul li p{height:40px;line-height:40px;padding-left:18px; background:#f0f0f0; border-bottom:1px solid #fefdfe;  color:#59636c;}
+.ny_msg .msglist ul li b.tit{font-size:14px;font-weight:bold;  color:#000;}
+.ny_msg .msglist ul li div{ color:#59636c; line-height:18px;border-bottom:1px solid #fefdfe;padding:15px 18px 20px 18px; background:#e6e9ec; }
+.ny_msg .msglist ul li p.msger{background:#d8dde0;}
+.ny_msg .msglist ul li .msgText{background:#d8dde0;}
+.ny_msg .msglist ul li .msgReply{border-bottom:none;}
+.ny_msg .msgpages{text-align:center;}
+.ny_msg .msgpages a{ margin:0 1px; font-family:Arial;  color:#666666;}
+.ny_msg .msgpages span.msgpageAll{color:#666666;}
+
+
+
+/*.ny_pro li{ margin:0 13px;}*/
+/*.ny_pro ul{ float:left; margin:0 -13px;}*/
+

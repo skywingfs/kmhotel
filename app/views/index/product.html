@@ -1,0 +1,21 @@
+{{extends file="front.html"}}
+{{block name=cssjs}}<link href="{{$assets}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">{{/block}}
+{{block name=position}}您的位置：首页 >> 产品中心{{/block}}
+{{block name=title}}产品中心
+{{/block}}
+{{block name=main_css}} <div class="main"> {{/block}}
+{{block name=main}}
+
+<div class="cont">
+{{foreach $arts as $art}}
+    <div class="img_pros" style="float: left;margin-right: 25px;margin-bottom: 30px;">
+<a href="index.php?c=index&a=show_img&id={{$art.id}}"><img src="{{$art.pic_path}}" height="145px" width="160px"/></a>
+        <div style="width:160px;text-align:center">{{$art.title}}</div>
+
+</div>
+    {{/foreach}}
+</div>
+</div>
+{{block name=page}}<div style="margin-left: 500px;">{{$page_show}}</div>{{/block}}
+{{/block}}
+

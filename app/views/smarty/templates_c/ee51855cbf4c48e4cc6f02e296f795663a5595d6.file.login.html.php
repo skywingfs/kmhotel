@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-07-16 11:54:34
+<?php /* Smarty version Smarty-3.1.18, created on 2015-07-21 13:34:39
          compiled from "C:\wamp\www\kmhotel\app\views\user\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:946055a77f5a371727-44632172%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2073755ae2e4f850eb2-45143196%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '946055a77f5a371727-44632172',
+  'nocache_hash' => '2073755ae2e4f850eb2-45143196',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_55a77f5a3faca4_21900304',
+  'unifunc' => 'content_55ae2e4f8c5821_99836266',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a77f5a3faca4_21900304')) {function content_55a77f5a3faca4_21900304($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55ae2e4f8c5821_99836266')) {function content_55ae2e4f8c5821_99836266($_smarty_tpl) {?>
 <!DOCTYPE html>
 <html class="no-js">
 

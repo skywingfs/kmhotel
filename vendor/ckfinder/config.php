@@ -99,10 +99,10 @@ $config['Thumbnails'] = Array(
 		'directory' => $baseDir . '_thumbs',
 		'enabled' => true,
 		'directAccess' => false,
-		'maxWidth' => 100,
-		'maxHeight' => 100,
+		'maxWidth' => 200,
+		'maxHeight' => 200,
 		'bmpSupported' => false,
-		'quality' => 80);
+		'quality' => 100);
 
 /*
 Set the maximum size of uploaded images. If an uploaded image is larger, it
@@ -335,6 +335,6 @@ include_once "plugins/imageresize/plugin.php";
 include_once "plugins/fileeditor/plugin.php";
 include_once "plugins/zip/plugin.php";
 
-$config['plugin_imageresize']['smallThumb'] = '90x90';
-$config['plugin_imageresize']['mediumThumb'] = '120x120';
-$config['plugin_imageresize']['largeThumb'] = '180x180';
+$config['plugin_imageresize']['smallThumb'] = '90x90';//9090
+$config['plugin_imageresize']['mediumThumb'] = '120x120';//120120
+$config['plugin_imageresize']['largeThumb'] = '180x180';//180180

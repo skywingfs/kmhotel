@@ -10,9 +10,12 @@ form, input, button, option, textarea, select { margin: 0px; padding: 0px; }
 input, button, textarea, select { font:100% Tahoma, Helvetica, Arial, sans-serif; }
 a { text-decoration: none; cursor:pointer; outline:none; blr:expression(this.onFocus=this.blur());
     color:#515151; }
-a:link { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+a:link { text-decoration: none;}
+a:hover { text-decoration: none;}
+a:active { text-decoration: none;}
+
+
+
 th { font-weight:normal; }
 img { border: 0; }
 h3 { font-size:14px;  font-weight:bold; }

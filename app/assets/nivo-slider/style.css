@@ -22,7 +22,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	outline:0;
 	font-weight:inherit;
 	font-style:inherit;
-	font-size:100%;
+	/*font-size:100%;*/
 	font-family:inherit;
 	vertical-align:baseline;
 }
@@ -62,7 +62,7 @@ body {
 }
 
 a, a:visited {
-	color:blue;
+	/*color:blue;*/
 	text-decoration:none;
 }
 a:hover, a:active {
@@ -84,7 +84,7 @@ a:hover, a:active {
 
 /*调整轮播框大小*/
 .slider-wrapper { 
-	width: 80%;
+	width: 100%;
     margin-left: auto;
     margin-right: auto;
 }

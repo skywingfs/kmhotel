@@ -1,0 +1,25 @@
+{{extends file="front.html"}}
+{{block name=cssjs}}<link href="{{$assets}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">{{/block}}
+{{block name=position}}您的位置：首页 >> 新闻资讯{{/block}}
+{{block name=title}}新闻资讯
+{{/block}}
+{{block name=main_css}} <div class="main ny_news"> {{/block}}
+{{block name=main}}
+<div class="cont">
+    <ul>
+        {{foreach $news as $new}}
+        <li>
+            <a href="index.php?c=index&a=show_art&id={{$new.id}}" title='{{$new.title}}' target='_blank' style="">{{$new.title}}</a>
+            <span class="date">[{{date('Y-m-d H:i:s',$new.time)}}]</span>
+        </li>
+        {{/foreach}}
+    </ul>
+</div>
+</div>
+{{block name=page}}<div style="margin-left: 500px;">{{$page_show}}</div>{{/block}}
+{{/block}}
+
+
+
+
+

@@ -12,7 +12,7 @@ class ArticleController extends CommonController
         $p= isset($_GET["p"]) ? $_GET["p"] : "1";       //当前是第几页
         $page_size = C("page_size");                   //每页多少条数据
         $count = $this->model->count_art();         //总共多少条数据
-        $page_count = round($count/$page_size);         //页面总数
+        $page_count = ceil($count/$page_size);         //页面总数
 
         require(LIB_PATH."/page.php");
 

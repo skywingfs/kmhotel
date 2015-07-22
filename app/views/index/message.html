@@ -1,0 +1,125 @@
+{{extends file="front.html"}}
+{{block name=position}}您的位置：首页 >> 在线留言{{/block}}
+{{block name=title}}在线留言
+{{/block}}
+{{block name=main_css}} <div class="main ny_about"> {{/block}}
+    {{block name=main}}
+    <div class="ny_msg">
+    <div class="cont">
+        <p class="bridge"><a href="messageck.asp.htm">查看留言</a> | <a href="message.asp.htm">填写留言</a></p>
+        <p class="welcome"><img src="{{$assets}}/images/welcome.png" tppabs="http://www.whtyxjdyp.com/Include/images/welcome.png" width="600" height="35" /></p>
+        <form name=myform id=myform action="http://www.whtyxjdyp.com/message.asp" method=post onSubmit="return checkform();" target="_top">
+            <ul class="msg_form">
+                <li>
+                    <input maxlength=50 size=40 name=Title  value="留言主题(Theme)" id="m1" onBlur="changeBegin('m1','留言主题(Theme)');" onFocus="changeEnd('m1','留言主题(Theme)');"  >
+                </li>
+                <li>
+                    <input maxlength=50 size=40 name=Phone value="电话(Tel)" id="m2" onFocus="changeEnd('m2','电话(Tel)');"  onblur="this.value=this.value.replace(/\D/g,''); changeBegin('m2','电话(Tel)');"
+                           onkeydown="this.value=this.value.replace(/\D/g,'');checknumbers('m2');"
+                           onkeyup="this.value=this.value.replace(/\D/g,'');checknumbers('m2');"
+                            >
+                </li>
+                <li>
+                    <input maxlength=50 size=40 name=OwnerName value="姓名(Name)" id="m3" onBlur="changeBegin('m3','姓名(Name)');" onFocus="changeEnd('m3','姓名(Name)');" >
+                </li>
+                <li>
+                    <input maxlength=50 size=40 name=Email value="邮箱(E-mail)" id="m4" onBlur="changeBegin('m4','邮箱(E-mail)');" onFocus="changeEnd('m4','邮箱(E-mail)');" >
+                </li>
+                <li>
+                    <textarea name=Content id=Content rows=5 cols=40  onFocus="if(this.innerHTML=='请输入提交内容'){this.innerHTML=''}" onBlur="if(this.innerHTML==''){this.innerHTML='请输入提交内容'}">请输入提交内容</textarea>
+                </li>
+                <li class="butbox">
+                    <input name="Ver" id="Ver" type=hidden  value="cn">
+                    <input name=IP id="IP" type=hidden  value="122.228.229.217">
+                    <input name="IsChecked" id="IsChecked" type=hidden  value="False">
+                    <input name="acction" id="acction" type=hidden  value="add" >
+                    <input name=sub type=submit id="sub" style="width:89px;height:28px; margin-left:0px; background: url({{$assets}}/images/ny_msg1.gif)"  value="">
+                    &nbsp;
+                    <input name=res type=reset id="res" style="width:89px;height:28px;  background: url({{$assets}}/images/ny_msg2.gif)" value="">
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+</div>
+<script language="javascript">
+    function changeBegin(id,cont){
+        var str_text = document.getElementById(id);
+        if (str_text.value==""){
+            str_text.value=cont
+        }
+    }
+    function changeEnd(id,cont){
+        var str_text = document.getElementById(id);
+        if (str_text.value==cont){
+            str_text.value=""
+        }
+    }
+
+    function checkform(){
+        if(document.myform.Title.value=="留言主题(Theme)"){
+            alert('请输入您的留言主题!');
+            document.myform.Title.focus();
+            return false;
+        }
+        if(document.myform.OwnerName.value=="姓名(Name)"){
+            alert('请输入您的姓名!');
+            document.myform.OwnerName.focus();
+            return false;
+        }
+        if (document.myform.Phone.value=="电话(Tel)"){
+            alert('请输入联系电话!');
+            document.myform.Phone.focus();
+            return false;
+        }
+        if (document.myform.Email.value=="邮箱(E-mail)"){
+            alert('请输入您的电子邮件!');
+            document.myform.Email.focus();
+            return false;
+        }
+        if(!isEmail(document.myform.Email.value)){
+            alert('请输入正确的邮件格式');
+            document.myform.Email.focus();
+            return false;
+        }
+        if (document.myform.Content.value=="请输入提交内容"){
+            alert('请输入留言内容!');
+            document.myform.Content.focus();
+            return false;
+        }
+        return true;
+    }
+
+    var maxnum=11;
+    function checknumbers(name){
+        if(document.getElementById(name).value.length>maxnum){
+            document.getElementById(name).value=document.getElementById(name).value.substr(0,maxnum);
+            return false;
+        }
+    }
+
+
+    function checkform1(String)
+    {
+        if(!isEmail(String))
+        {
+            window.alert('请输入正确的邮件格式！');
+            String.focus();
+            return false;
+        }
+        return true;
+    }
+
+    function isEmail(Email)
+    {
+        var regInvalid=/(@.*@)|(\.\.)|(@\.)|(\.@)|(^\.)/;
+        var regValid=/^.+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,3}|[0-9]{1,3})(\]?)$/;
+        return (!regInvalid.test(Email)&&regValid.test(Email));
+    }
+</script>
+{{/block}}
+
+
+
+
+
