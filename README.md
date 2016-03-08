@@ -12,4 +12,6 @@ http://kmhotel.sinaapp.com/
 
 插件：ScrollPic , Nivo-Slider , Ckeditor，Ckfinder，Colorpicker，Datepicker，Select2  
 ![](http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_5c5656b9-b606-41b6-aaff-5dc88e53e2f6.png)  
-![]http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_486ae382-3e37-4fc2-8f6f-d4029ae4bd3a.png
+![](http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_486ae382-3e37-4fc2-8f6f-d4029ae4bd3a.png)
+![](http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_1a09e263-4a04-4b66-8d47-9aefe3fc2a8f.png)
+![](http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_9efea424-ff5f-459f-a7c6-b53010dd5677.png)
