@@ -11,4 +11,5 @@ http://kmhotel.sinaapp.com/
 后台业务：自制MVC框架，Smarty，验证码，无限分类，分页；  
 
 插件：ScrollPic , Nivo-Slider , Ckeditor，Ckfinder，Colorpicker，Datepicker，Select2  
-![]http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_5c5656b9-b606-41b6-aaff-5dc88e53e2f6.png
+![](http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_5c5656b9-b606-41b6-aaff-5dc88e53e2f6.png)  
+![]http://www.phpgoto.com/wp-content/uploads/2015/07/wpid-663ec2cc856c203603b5291a6a3e71fd_486ae382-3e37-4fc2-8f6f-d4029ae4bd3a.png
