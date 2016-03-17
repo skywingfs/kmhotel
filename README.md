@@ -1,6 +1,6 @@
 # kmhotel
-##项目简介
-<code style='color:#66ffcc;background-color:#ff99ff'>php</code>
+##项目简介  
+<code>php</code>  
 用PHP写的第一个项目，使用朋友写的MVC框架，单一入口访问，后台管理使用bootstrap3响应式布局，适合各种移动设备访问。
 ##项目地址
 http://kmhotel.sinaapp.com/ 
